@@ -1,0 +1,152 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/head.png?v=1.7.0" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/head.png?v=1.7.0" type="image/png" sizes="32x32"><meta name="description" content="MATLAB入门                 基本数值运算   MATLAB中的变量必须字母开头，且只能由字母、数字和下划线组成。   变量区分大小写   MATLAB矩阵结构">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数字图像处理笔记">
+<meta property="og:url" content="http://19960218.xyz/2020/09/18/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="GOTH">
+<meta property="og:description" content="MATLAB入门                 基本数值运算   MATLAB中的变量必须字母开头，且只能由字母、数字和下划线组成。   变量区分大小写   MATLAB矩阵结构">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-09-18T11:41:16.000Z">
+<meta property="article:modified_time" content="2020-09-21T15:15:01.523Z">
+<meta property="article:author" content="GOTH">
+<meta property="article:tag" content="数字图像处理">
+<meta property="article:tag" content="助教课程">
+<meta property="article:tag" content="MATLAB">
+<meta name="twitter:card" content="summary"><meta name="keywords" content="GOTH, GOTH"><meta name="description" content="个人Blog"><title>数字图像处理笔记</title><link ref="canonical" href="http://19960218.xyz/2020/09/18/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%AC%94%E8%AE%B0/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=1.7.0"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":false},
+  post_widget: {"end_text":true},
+  night_mode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","word_wrap":true},
+  reward: false,
+  fancybox: false,
+  zoom_image: {"enable":true,"mask_color":"rgba(0,0,0,0.6)"},
+  gallery_waterfall: undefined,
+  lazyload: undefined,
+  pjax: undefined,
+  external_link: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copy_button":"复制","copy_success":"复制成功","copy_error":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="GOTH" type="application/atom+xml">
+</head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/about/"><span class="header-nav-menu-item__icon"><i class="fas fa-info"></i></span><span class="header-nav-menu-item__text">关于</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">GOTH</div><div class="header-banner-info__subtitle"></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">数字图像处理笔记</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2020-09-18</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2020-09-21</span></span></div></header><div class="post-body">
+        <h1   id="MATLAB入门" >
+          <span class="heading-link">MATLAB入门</span>
+        </h1>
+      <ol>
+<li>基本数值运算</li>
+</ol>
+<ul>
+<li>MATLAB中的变量必须字母开头，且只能由字母、数字和下划线组成。  </li>
+<li>变量区分大小写</li>
+</ul>
+<ol start="2">
+<li>MATLAB矩阵结构  <a id="more"></a></li>
+<li>1 <strong>创建矩阵</strong><br>矩阵是MATLAB运算的基础。必须要县确定类型，创建矩阵。<br>创建方法</li>
+</ol>
+<ul>
+<li><em>直接输入矩阵元素</em></li>
+<li><em>调用矩阵创建函数</em>  </li>
+</ul>
+<p>2.2 <strong>向量、标量、空矩阵</strong></p>
+<ul>
+<li>向量：行数或列数为1的特殊矩阵<br>例创建10-1的递减向量数列(10:-1:1)</li>
+<li>标量：行列数都为1的特殊矩阵。任意以矩阵表示单个实数或复数</li>
+<li>空矩阵：至少一维的数值为0的矩阵；<br>不是全0的矩阵<br>例：a=[]  用whos查看其名称、大小、数据类型。  </li>
+</ul>
+<p>2.3 <strong>矩阵寻访</strong><br>元素下标：MATLAB中的下标都是从<strong>1</strong>开始的。<br>矩阵的下标表示与常用的数学习惯相同，使用”双下标“（row,column）,分别表示行和列的索引。<br>例：创建矩阵A</p>
+<figure class="highlight angelscript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>;<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]</span><br></pre></td></tr></table></div></figure>
+<p>则</p>
+<figure class="highlight angelscript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A(<span class="number">2</span>,<span class="number">2</span>) ans = <span class="number">5</span></span><br></pre></td></tr></table></div></figure>
+<p>用冒号(:)表示矩阵的多个元素。表示等差步进，从而帮助生成向量矩阵。<br>例：在上述矩阵A中。<br>A(i:i+j,n)表示第n列的i~i+j个元素<br>A(m,:)表示M行中的所有元素</p>
+<figure class="highlight angelscript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A(<span class="number">1</span>:<span class="number">2</span>,<span class="number">2</span>)</span><br></pre></td></tr></table></div></figure>
+<p>ans=</p>
+<figure class="highlight angelscript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">5</span></span><br></pre></td></tr></table></div></figure>
+<figure class="highlight angelscript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A(<span class="number">2</span>,<span class="number">1</span>:<span class="number">3</span>)</span><br></pre></td></tr></table></div></figure>
+<p>ans=</p>
+<figure class="highlight basic"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">4 </span><span class="number">5</span> <span class="number">6</span></span><br></pre></td></tr></table></div></figure>
+<p>2.4 <strong>获取矩阵存储信息</strong><br>如下表所示：  </p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th align="left">函数</th>
+<th align="left">功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">length</td>
+<td align="left">矩阵的最长维长度</td>
+</tr>
+<tr>
+<td align="left">ndims</td>
+<td align="left">矩阵的维度</td>
+</tr>
+<tr>
+<td align="left">numel</td>
+<td align="left">矩阵的元素个数</td>
+</tr>
+<tr>
+<td align="left">size</td>
+<td align="left">矩阵指定维的长度</td>
+</tr>
+</tbody></table></div>
+<p>3 MATLAB数组<br>3.1 数组索引</p>
+<ul>
+<li>向量的元素可以使用单一的索引值(下标)来访问.</li>
+<li>[]来定义数组或者矩阵，用()来引用其中的元素。</li>
+<li>可以用一个向量作为另一个向量的索引。<br>例：<br>v([1 4 5])表示数组v的第1、4、5个元素</li>
+</ul>
+<p>3.2 单元数组</p>
+<ul>
+<li>单元数组提供了在一个变量名下组合一组对象（如：数字、字符、其他单元矩阵）的方法。</li>
+<li>用name{}查看单位数组元素，name()查看其描述。</li>
+</ul>
+<p>4 函数句柄<br>M文件是MATLAB脚本。<br>4.1 两种类型</p>
+<ul>
+<li>命名函数句柄：@+函数名称如<strong>f=@sin</strong></li>
+<li>匿名函数句柄：由@+MATLAB表达式形成。<br>M文件由以下部分组成：函数定义行、H1行、帮助文本、函数体、注释。</li>
+</ul>
+<p>5 MATLAB运算符<br>5.1 算数运算符</p>
+<ul>
+<li>矩阵算数运算符—-按线性代数的规则定义</li>
+<li>数组运算符—-逐个元素地执行，且可以用于多维数组。<br>tip<blockquote>
+<p>使用 <strong><em>“.”</em></strong> 来区分数组运算和矩阵运算。  </p>
+</blockquote>
+</li>
+<li>A*B —-表示矩阵叉乘  </li>
+<li>A.*B—-表示矩阵对应元素的点乘
+        <h1   id="图像处理基础" >
+          <span class="heading-link">图像处理基础</span>
+        </h1>
+      1 图象和数字图像  </li>
+</ul>
+<p>1.1 图象的定义<br>用于各种观察系统以不同形式和手段观测客观世界而获得的，可以直接或间接作用域人眼并产生视觉知觉的实体。<br>1.2 图像的类型</p>
+<ul>
+<li>广义：图片。动画，绘图，文字/文档</li>
+<li>侠义：单幅-&gt;序列图像，静止-&gt;运动图像（视频），2D-&gt;3D，灰度-&gt;深度 </li>
+</ul>
+<p>2 图像的数字表达<br>2.1 图像的表示<br>2-D数组f(x,y)<br>x,y:2-D空间XY中坐标点的位置<br>f:代表图象在（x,y）的性质F的数值<br>f,x,y的值可以是任意实数<br>性质F:可对应不同物理量，<br>2.2 空间分辨率和幅度分辨率  </p>
+<ul>
+<li>图像必须需要在空间和灰度上都离散化才能被计算机处理，称为量化过程。</li>
+<li>空间坐标的离散化称为空间采样,确定图像的空间分辨率。</li>
+<li>灰度值的离散化成为灰度量化，确定图像的幅度分辨率。<br>分辨率与数据量：不同的量化精度确定了图像不同分辨率，以及分辨率紧密联系的数据量。  </li>
+</ul>
+<p>tip </p>
+<blockquote>
+<p>一幅图像的尺寸（空间分辨率）为M*N,表明该图像包含MN个像素。如果每个像素都用G个灰度值的一个来赋值，表明在成像时量化了G个灰度级（幅度分辨率）。<br>存储一幅图像所需的数据量由图像的空间分辨率和幅度分辨率共同决定。  </p>
+</blockquote>
+<p>tip2</p>
+<blockquote>
+<p>存储一幅图像所需的位数b（单位为比特，bit）为:<br>b=M*N*k<br>k为存储每个像素所需的bit数量</p>
+</blockquote>
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感觉您的阅读 ------</div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="http://19960218.xyz/tags/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/">数字图像处理</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="http://19960218.xyz/tags/%E5%8A%A9%E6%95%99%E8%AF%BE%E7%A8%8B/">助教课程</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="http://19960218.xyz/tags/MATLAB/">MATLAB</a></span></div><nav class="post-paginator paginator"><div class="paginator-next"><a class="paginator-next__link" href="/2020/06/30/hello-world/"><span class="paginator-prev__text">Hello World</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#MATLAB入门"><span class="toc-number">1.</span> <span class="toc-text">
+          MATLAB入门
+        </span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#图像处理基础"><span class="toc-number">2.</span> <span class="toc-text">
+          图像处理基础
+        </span></a></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/head.jpg" alt="avatar"></div><p class="sidebar-ov-author__text">世界这么大，让我来康康</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/GOTHz1" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span></a><a class="sidebar-ov-social-item" href="mailto:gothz1@outlook.com" target="_blank" rel="noopener" data-popover="email" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-envelope-square"></i></span></a><a class="sidebar-ov-social-item" href="tencent://message/?uin=1337709506&amp;Site=&amp;Menu=yes" target="_blank" rel="noopener" data-popover="QQ" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-qq"></i></span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">8</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">5</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">12</div><div class="sidebar-ov-state-item__name">标签</div></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2020</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>GOTH</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=1.7.0"></script><script src="/js/stun-boot.js?v=1.7.0"></script><script src="/js/scroll.js?v=1.7.0"></script><script src="/js/header.js?v=1.7.0"></script><script src="/js/sidebar.js?v=1.7.0"></script></body></html>
