@@ -5,13 +5,19 @@
 <meta property="og:site_name" content="GOTH">
 <meta property="og:description" content="MATLAB入门                 基本数值运算   MATLAB中的变量必须字母开头，且只能由字母、数字和下划线组成。   变量区分大小写   MATLAB矩阵结构">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s1.ax1x.com/2020/09/22/wLmEnS.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/09/22/wL1mrt.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/09/22/wXGZrj.th.jpg">
+<meta property="og:image" content="https://s1.ax1x.com/2020/09/22/wXGNZR.th.jpg">
+<meta property="og:image" content="https://s1.ax1x.com/2020/09/22/wXaaod.png">
 <meta property="article:published_time" content="2020-09-18T11:41:16.000Z">
-<meta property="article:modified_time" content="2020-09-21T15:15:01.523Z">
+<meta property="article:modified_time" content="2020-09-22T15:24:18.054Z">
 <meta property="article:author" content="GOTH">
 <meta property="article:tag" content="数字图像处理">
 <meta property="article:tag" content="助教课程">
 <meta property="article:tag" content="MATLAB">
-<meta name="twitter:card" content="summary"><meta name="keywords" content="GOTH, GOTH"><meta name="description" content="个人Blog"><title>数字图像处理笔记</title><link ref="canonical" href="http://19960218.xyz/2020/09/18/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%AC%94%E8%AE%B0/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=1.7.0"><script>var Stun = window.Stun || {};
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s1.ax1x.com/2020/09/22/wLmEnS.png"><meta name="keywords" content="GOTH, GOTH"><meta name="description" content="个人Blog"><title>数字图像处理笔记</title><link ref="canonical" href="http://19960218.xyz/2020/09/18/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%AC%94%E8%AE%B0/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=1.7.0"><script>var Stun = window.Stun || {};
 var CONFIG = {
   root: '/',
   algolia: undefined,
@@ -35,7 +41,7 @@ var CONFIG = {
 };
 
 window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="GOTH" type="application/atom+xml">
-</head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/about/"><span class="header-nav-menu-item__icon"><i class="fas fa-info"></i></span><span class="header-nav-menu-item__text">关于</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">GOTH</div><div class="header-banner-info__subtitle"></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">数字图像处理笔记</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2020-09-18</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2020-09-21</span></span></div></header><div class="post-body">
+</head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/about/"><span class="header-nav-menu-item__icon"><i class="fas fa-info"></i></span><span class="header-nav-menu-item__text">关于</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">GOTH</div><div class="header-banner-info__subtitle"></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">数字图像处理笔记</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2020-09-18</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2020-09-22</span></span></div></header><div class="post-body">
         <h1   id="MATLAB入门" >
           <span class="heading-link">MATLAB入门</span>
         </h1>
@@ -145,8 +151,72 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 4.2.0"><lin
 <blockquote>
 <p>存储一幅图像所需的位数b（单位为比特，bit）为:<br>b=M*N*k<br>k为存储每个像素所需的bit数量</p>
 </blockquote>
+
+        <h1   id="MATLAB中的数字图像" >
+          <span class="heading-link">MATLAB中的数字图像</span>
+        </h1>
+      <p>1 坐标约定<br>在MATLAB中用(r,c)表示行和列，坐标系原点在(1,1)处，水平向右为c垂直向下为r。<br>如下图M行、N列的一幅图像f(x,y)。r的最大值为M，c的最大值为N。<br><img src="https://s1.ax1x.com/2020/09/22/wLmEnS.png" alt="wLmEnS.png"></p>
+<p>2 图像的输入输出和显示<br>2.1 imread方法<br>    f=imread(‘filename.jpg’)文件可采用当前路径、绝对路径、相对路径。<br>    其中f为获得的图像数组。<br>2.2 imshow方法<br>用法为imshow(f)。<br>2.3 imwrite方法<br>用法：imwrite(f,’outf.jpg’)；同样可自定义路径。  </p>
+<blockquote>
+<p>如：</p>
+</blockquote>
+<figure class="highlight stylus"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">imwrite</span><span class="params">(f,<span class="string">'E:\DATA\AFile\outf.tif'</span>)</span></span></span><br></pre></td></tr></table></div></figure>
+<p>3 数据类<br><img src="https://s1.ax1x.com/2020/09/22/wL1mrt.png" alt="wL1mrt.png"><br>4 图像类型<br>4.1 灰度级图像</p>
+<ul>
+<li>一个数据矩阵,矩阵的值表示灰度浓淡。  </li>
+<li>当灰度级图像元素是uint8时具有的范围[0,255]的整数值。  </li>
+<li>图像的数据类型是Double或者single，其值就是浮点数。<br>double或者single类型的灰度级图像通常会归一化到范围[0,1]。<br>tip:<blockquote>
+<p>uin8类型的图像—-将其每个像素的灰度值除以255得到double或single类型的灰度图像。  </p>
+</blockquote>
+</li>
+</ul>
+<p>4.2 二值图像</p>
+<ul>
+<li>取值只有0-1的逻辑矩阵。一个数值矩阵转换为二值图像，可使用<strong>logical</strong>函数</li>
+</ul>
+<p>4.3 RGB图像  </p>
+<ul>
+<li><p>一副RGB图像是彩色像素的一个M<em>N</em>3数组;</p>
+</li>
+<li><p>每个像素点都从彩色图像相对应的红绿蓝三个分量。（见第六章p144）</p>
+</li>
+<li><p>分量图像的像素比特决定了RGB图像的比特深度，</p>
+</li>
+<li><p>一副RGB图像包含的色彩数范围是(2^b)^3,b是分量图像的比特数。</p>
+</li>
+<li><p>若所有分量图像都是一样的，则RGB图像是一副灰度图像，</p>
+</li>
+<li><p><em>操作：*</em></p>
+</li>
+<li><p>利用cat（级联）操作符将分量图像fRed,fGreen，fBlue组合成彩色图像:</p>
+<figure class="highlight ini"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">rgbim</span>=cat(<span class="number">3</span>,fRed,fGreen,fBlue)</span><br></pre></td></tr></table></div></figure></li>
+<li><p>利用rgbim(:,:,i)来获取RGB图像rgbim的某个分量图像。</p>
+</li>
+<li><p>rgb2gray命令将彩色图像转换为灰度图像。如下图：<br><a href="https://imgchr.com/i/wXGZrj" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/09/22/wXGZrj.th.jpg" alt="wXGZrj.th.jpg"></a> <a href="https://imgchr.com/i/wXGNZR" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/09/22/wXGNZR.th.jpg" alt="wXGNZR.th.jpg"></a><br>5 图像工程</p>
+</li>
+</ul>
+<p>5.1 图象技术和图像工程</p>
+<ul>
+<li>略</li>
+</ul>
+<p>5.2 图象工程的三个层次</p>
+<ul>
+<li>图象处理：着重强调图像到图像之间进行的变换。对图像进行各种加工以改善图像的视觉效果并为自动识别打基础，或对图像进行压缩编码以减少对其所需存储空间或传输时间的要求。</li>
+<li>图像分析：对图像中感兴趣的目标进行检测和测量，以获得它们的客观信息从而建立对图像的描述。图像分析是一个从图像到数据的过程，这里数据可以是对目标特征检测的结果或是基于测量的符号表示。</li>
+<li>图像理解：重点是在图像分析的基础上，借助知识、经验等进一步研究图像中各目标的性质和他们之间的相互联系，并得出对图像内容含义的理解以及对原来客观场景的解释，从而指导和规划行动。<br><a href="https://imgchr.com/i/wXaaod" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/09/22/wXaaod.png" alt="wXaaod.png"></a></li>
+</ul>
+<p>5.3 图象工程相关科学领域</p>
+<ul>
+<li>图像识别、图像理解或计算机视觉。</li>
+</ul>
+<p>5.4 图象工程的技术应用</p>
+<ul>
+<li>视频通信、文字档啊、生物医学、遥感测绘、工业生产、军事公安、交通管理。</li>
+</ul>
 </div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感觉您的阅读 ------</div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="http://19960218.xyz/tags/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/">数字图像处理</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="http://19960218.xyz/tags/%E5%8A%A9%E6%95%99%E8%AF%BE%E7%A8%8B/">助教课程</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="http://19960218.xyz/tags/MATLAB/">MATLAB</a></span></div><nav class="post-paginator paginator"><div class="paginator-next"><a class="paginator-next__link" href="/2020/06/30/hello-world/"><span class="paginator-prev__text">Hello World</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#MATLAB入门"><span class="toc-number">1.</span> <span class="toc-text">
           MATLAB入门
         </span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#图像处理基础"><span class="toc-number">2.</span> <span class="toc-text">
           图像处理基础
+        </span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#MATLAB中的数字图像"><span class="toc-number">3.</span> <span class="toc-text">
+          MATLAB中的数字图像
         </span></a></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/head.jpg" alt="avatar"></div><p class="sidebar-ov-author__text">世界这么大，让我来康康</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/GOTHz1" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span></a><a class="sidebar-ov-social-item" href="mailto:gothz1@outlook.com" target="_blank" rel="noopener" data-popover="email" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-envelope-square"></i></span></a><a class="sidebar-ov-social-item" href="tencent://message/?uin=1337709506&amp;Site=&amp;Menu=yes" target="_blank" rel="noopener" data-popover="QQ" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-qq"></i></span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">8</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">5</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">12</div><div class="sidebar-ov-state-item__name">标签</div></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2020</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>GOTH</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=1.7.0"></script><script src="/js/stun-boot.js?v=1.7.0"></script><script src="/js/scroll.js?v=1.7.0"></script><script src="/js/header.js?v=1.7.0"></script><script src="/js/sidebar.js?v=1.7.0"></script></body></html>
