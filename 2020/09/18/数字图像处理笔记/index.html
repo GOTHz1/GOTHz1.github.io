@@ -1,9 +1,9 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/head.png?v=1.7.0" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/head.png?v=1.7.0" type="image/png" sizes="32x32"><meta name="description" content="一、MATLAB入门                 基本数值运算   MATLAB中的变量必须字母开头，且只能由字母、数字和下划线组成。   变量区分大小写   MATLAB矩阵结构">
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/head.png?v=1.7.0" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/head.png?v=1.7.0" type="image/png" sizes="32x32"><meta name="description" content="MATLAB入门                 基本数值运算   MATLAB中的变量必须字母开头，且只能由字母、数字和下划线组成。   变量区分大小写   MATLAB矩阵结构">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数字图像处理笔记">
 <meta property="og:url" content="http://19960218.xyz/2020/09/18/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="GOTH">
-<meta property="og:description" content="一、MATLAB入门                 基本数值运算   MATLAB中的变量必须字母开头，且只能由字母、数字和下划线组成。   变量区分大小写   MATLAB矩阵结构">
+<meta property="og:description" content="MATLAB入门                 基本数值运算   MATLAB中的变量必须字母开头，且只能由字母、数字和下划线组成。   变量区分大小写   MATLAB矩阵结构">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://s1.ax1x.com/2020/09/22/wLmEnS.png">
 <meta property="og:image" content="https://s1.ax1x.com/2020/09/22/wL1mrt.png">
@@ -11,8 +11,13 @@
 <meta property="og:image" content="https://s1.ax1x.com/2020/09/22/wXGNZR.th.jpg">
 <meta property="og:image" content="https://s1.ax1x.com/2020/09/22/wXaaod.png">
 <meta property="og:image" content="https://s1.ax1x.com/2020/09/23/wxsddx.jpg">
+<meta property="og:image" content="https://s1.ax1x.com/2020/09/24/wzoZi4.jpg">
+<meta property="og:image" content="https://s1.ax1x.com/2020/09/24/wzbJBt.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/09/24/0SmztK.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/09/24/0SlAF1.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/09/24/0SBbmn.png">
 <meta property="article:published_time" content="2020-09-18T11:41:16.000Z">
-<meta property="article:modified_time" content="2020-09-23T16:03:59.874Z">
+<meta property="article:modified_time" content="2020-09-24T11:53:14.563Z">
 <meta property="article:author" content="GOTH">
 <meta property="article:tag" content="数字图像处理">
 <meta property="article:tag" content="助教课程">
@@ -43,8 +48,8 @@ var CONFIG = {
 
 window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="GOTH" type="application/atom+xml">
 </head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/about/"><span class="header-nav-menu-item__icon"><i class="fas fa-info"></i></span><span class="header-nav-menu-item__text">关于</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">GOTH</div><div class="header-banner-info__subtitle"></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">数字图像处理笔记</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2020-09-18</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2020-09-24</span></span></div></header><div class="post-body">
-        <h1   id="一、MATLAB入门" >
-          <span class="heading-link">一、MATLAB入门</span>
+        <h1   id="MATLAB入门" >
+          <span class="heading-link">MATLAB入门</span>
         </h1>
       <ol>
 <li>基本数值运算</li>
@@ -120,8 +125,8 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 4.2.0"><lin
 <p>使用 <strong><em>“.”</em></strong> 来区分数组运算和矩阵运算。<br>A<em>B —-表示矩阵叉乘<br>A.</em>B—-表示矩阵对应元素的点乘</p>
 </blockquote>
 
-        <h1   id="二、图像处理基础" >
-          <span class="heading-link">二、图像处理基础</span>
+        <h1   id="图像处理基础" >
+          <span class="heading-link">图像处理基础</span>
         </h1>
       1 图象和数字图像  </li>
 </ul>
@@ -212,13 +217,145 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 4.2.0"><lin
         <h2   id="图像变换" >
           <span class="heading-link">图像变换</span>
         </h2>
-      <p>1 图像坐标变换概述<br>2 基本坐标变换<br>2.1 变换的表达<br>2.2 平移、缩放和旋转变换<br>3 坐标变换扩展<br>3.1 变换级联<br>3.2 反变换<br>4 图像变换的MATLAB实现</p>
-</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感觉您的阅读 ------</div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="http://19960218.xyz/tags/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/">数字图像处理</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="http://19960218.xyz/tags/%E5%8A%A9%E6%95%99%E8%AF%BE%E7%A8%8B/">助教课程</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="http://19960218.xyz/tags/MATLAB/">MATLAB</a></span></div><nav class="post-paginator paginator"><div class="paginator-next"><a class="paginator-next__link" href="/2020/04/18/%E5%A4%9C%E6%B7%B1%E4%BA%BA%E9%9D%99%EF%BC%8C%E5%86%99%E7%AF%87%E5%B0%8F%E7%BB%93/"><span class="paginator-prev__text">夜深人静，写篇小结</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、MATLAB入门"><span class="toc-number">1.</span> <span class="toc-text">
-          一、MATLAB入门
-        </span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、图像处理基础"><span class="toc-number">2.</span> <span class="toc-text">
-          二、图像处理基础
+      <p>1 图像坐标变换概述  </p>
+<ul>
+<li>空间域处理方法<br>  坐标变换，亮度（灰度变换和空间滤波）</li>
+<li>空间域<br>  指图像像素位置所在的空间，也称图像空间<blockquote>
+<p>坐标变换</p>
+<blockquote>
+<p>将一副图像中的坐标位置映射到另外一副图像中的新坐标位置，不改变图像的像素值，只在图平面上进行像素的重新安排。</p>
+</blockquote>
+</blockquote>
+</li>
+</ul>
+<p>2 基本坐标变换<br>更详细介绍可查看链接<span class="exturl"><a class="exturl__link"   href="https://www.matongxue.com/madocs/244"  target="_blank" rel="noopener">如何通俗的解释仿射变换？</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span><br>2.1 变换的表达<br>        像素点的坐标标记为（x,y）齐次坐标则为（x,y,1）。</p>
+<blockquote>
+<p>齐次坐标</p>
+<blockquote>
+<p>n维的向量–&gt;n+1维向量<br>例：<br>(x,y)二维向量–&gt;(x,y,1)三维向量  </p>
+</blockquote>
+</blockquote>
+<p>齐次坐标属于投影几何坐标系统常用于仿射变换。<br>v’=AV</p>
+<blockquote>
+<p>A为3<em>3变换矩阵，对于不同的变换，其元素值不同，A唯一确定其变换结果。<br>对于一组m个点的变换，令v1,v2,v3,…vm个组成3</em>m矩阵V，则变换后的点矩阵V’为：</p>
+</blockquote>
+<figure class="highlight fix"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">V'</span>=<span class="string">AV</span></span><br></pre></td></tr></table></div></figure>
+
+<p>2.2 平移、缩放和旋转变换<br><img src="https://s1.ax1x.com/2020/09/24/wzoZi4.jpg" alt="wzoZi4.jpg">  </p>
+<blockquote>
+<p>旋转变换中可按照旋转轴更改仿射矩阵旋转图像，</p>
+</blockquote>
+<p>3 坐标变换扩展<br>3.1 变换级联<br>当图像需要多种旋转方式，可按其变换方式依次相乘。称为变换级联。</p>
+<blockquote>
+<p>级联变换只支持结合律，不支持交换律。</p>
+</blockquote>
+<p>3.2 反变换<br>可根据变换矩阵得出其反变换矩阵<br><a href="https://imgchr.com/i/wzbJBt" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/09/24/wzbJBt.png" alt="wzbJBt.png"></a></p>
+<blockquote>
+<p>变换矩阵和反变换矩阵乘积为单位矩阵。</p>
+</blockquote>
+<p>4 图像变换的MATLAB实现<br>平移：</p>
+<figure class="highlight ini"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">g</span>=imtranslate(f, r, c)<span class="comment">;</span></span><br></pre></td></tr></table></div></figure>
+<p>旋转：</p>
+<figure class="highlight gcode"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">g=imrotate<span class="comment">(f,a)</span></span><br></pre></td></tr></table></div></figure>
+<p>缩放：</p>
+<figure class="highlight gcode"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">g=imresize<span class="comment">(f,scale)</span><span class="comment">//等比缩放</span></span><br><span class="line">g=imresize<span class="comment">(f,scale,method)</span><span class="comment">//含方法的等比缩放</span></span><br><span class="line">g=imresize<span class="comment">(f,[rows,cols]scale)</span><span class="comment">//自定义大小缩放</span></span><br><span class="line"><span class="meta">%</span> 将图像f缩放至rows行Xcols列的图像g，插值运算使用method方法</span><br><span class="line"><span class="meta">%</span> <span class="string">'nearest'</span><span class="comment">(默认值)</span>最邻近插值</span><br><span class="line"><span class="meta">%</span> <span class="string">'bilinear'</span>双线性插值</span><br><span class="line"><span class="meta">%</span> <span class="string">'bicubic'</span>双三次插值</span><br></pre></td></tr></table></div></figure>
+
+        <h2   id="图像间的运算" >
+          <span class="heading-link">图像间的运算</span>
+        </h2>
+      <p>1 图像的算术和逻辑运算  (图象的算术和逻辑运算是逐像素进行的)<br>1.1 算术运算  </p>
+<ol>
+<li>加法：p+q</li>
+<li>减法：p-q</li>
+<li>乘法：p*q</li>
+<li>除法：p÷q  </li>
+</ol>
+<p>1.2 逻辑运算  </p>
+<ol>
+<li>补    p=~q：        NOT q </li>
+<li>与    p&amp;q：        p AND q</li>
+<li>或    q|p:qp         OR q</li>
+<li>异或    xor(p,q)：    p XOR q<blockquote>
+<p>MATLAB中将逻辑1或者非零值当作true处理<br>将逻辑0和数值0当作false处理</p>
+</blockquote>
+</li>
+</ol>
+<p>1.3 图像间算数和逻辑运算的特点  </p>
+<blockquote>
+<p>在(x,y)位置做一个算术运算或逻辑运算的结果可以存在其中一个图像的相应位置。</p>
+</blockquote>
+<p>2 图像间运算的MATLAB运算实现<br><a href="https://imgchr.com/i/0SmztK" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/09/24/0SmztK.png" alt="0SmztK.png"></a><br>3 图像间运算的应用<br>3.1 图像间加法的运用<br>消除随机噪声处理<br><img src="https://s1.ax1x.com/2020/09/24/0SlAF1.png" alt="0SlAF1.png"><br>3.2 图像间减法的运用  </p>
+<ul>
+<li>设有图像f(x,y)和h(x,y)对它们相减，可获得两图差异：<br>g(x,y)=g(x,y)-h(x,y)</li>
+<li>常用于医学图像处理以消除背景。</li>
+<li>在运动检测中对事件相邻的两幅图求差可以将图像中目标的位置和形状变化凸显出来。</li>
+</ul>
+<p>3.3 图像间乘法和除法的运用  </p>
+<ul>
+<li>校正由于照明或者传感器的非均匀性造成的图像明暗变化.</li>
+<li>模板运输
+        <h2   id="图像的灰度运算" >
+          <span class="heading-link">图像的灰度运算</span>
+        </h2>
+      1 图像灰度映射原理<br>  将图像f(x,y)中的每个像素的灰度按灰度映射函数E（H）操作直接变换得到图像g(x,y)，以达到增强视觉效果的目的。<br>  直灰度映射是一种点操作：t=E(H)（s）<br>  图像灰度映射的关键是根据增强要求设计灰度映射函数，或映射规则。<br>常用的图像灰度映射函数：<br>图像求反、增强对比度、动态范围压缩、灰度切分  </li>
+<li>伽马矫正<br>借助指数变化进行，指数变换形式为：t=Cs^y (s是灰度，自变量；C是常数，γ是实数)<ol>
+<li>当γ&lt;1时—-输入中较窄的灰度范围被映射到输出中较宽的灰度范围，而输入中较高的高灰度范围被映射到输出中较窄的灰度范围。   <blockquote>
+<p>关于伽马校正</p>
+<blockquote>
+<p>为图像进行伽马编码的目的是用来对人类视觉的特性进行补偿，从而根据人类对光线或者黑白的感知，最大化地利用表示黑白的数据位或带宽。在通常的照明（既不是漆黑一片，也不是令人目眩的明亮）的情况下，人类的视觉大体有伽马或者是幂函数的性质。如果不将图像进行伽马编码，那么数据位或者带宽的利用就会分布不均匀——会有过多的数据位或者带宽用来表示人类根本无法察觉到的差异，而用于表示人类非常敏感的视觉感知范围的数据位或者带宽又会不足。图像的伽马编码并不是必须的（甚至有的时候会适得其反），浮点数格式的颜色值已经提供了一部分对数曲线的线性估计。  </p>
+</blockquote>
+</blockquote>
+</li>
+</ol>
+</li>
+</ul>
+<p>–来自<span class="exturl"><a class="exturl__link"   href="https://zh.wikipedia.org/wiki/%E4%BC%BD%E7%91%AA%E6%A0%A1%E6%AD%A3"  target="_blank" rel="noopener">《维基百科–伽马校正》</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>  </p>
+<p>2 灰度变换的MATLAB函数<br>2.1 imadjust 和 stretchlim</p>
+<ul>
+<li>函数imadjust用于对灰度级图像进行灰度变换。<figure class="highlight ceylon"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">g=imadjust(f,[low<span class="number">_</span><span class="keyword">in</span> high<span class="number">_</span><span class="keyword">in</span>],[low<span class="number">_</span><span class="keyword">out</span> high<span class="number">_</span><span class="keyword">out</span>],gamma)</span><br><span class="line">`</span><br></pre></td></tr></table></div></figure>
+<blockquote>
+<p>输入图像可以是uint8、uint16、single或double类，输出图像和输入图像属于同一类，但其它输入值都被限定在0和1之间，而与f类别无关。<br>参数gamma指定从图像f中的灰度映射生成图像g的曲线形状，默认为1（线性映射）。</p>
+</blockquote>
+</li>
+</ul>
+<p><img src="https://s1.ax1x.com/2020/09/24/0SBbmn.png" alt="0SBbmn.png">  </p>
+<ul>
+<li>函数stretchlim用于获得图像f中灰度级底部和顶部。  <figure class="highlight ini"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">Low_High</span>=stretchlim(f)</span><br></pre></td></tr></table></div></figure>
+<blockquote>
+<p>Low_High是一个两元素向量，由灰度级底限和高限组成，默认为图像f中充满灰度级底部和顶部1%的灰度底限和高限。<br>关于灰度变换的具体操作可见 <strong>dip_example0201.m</strong>  </p>
+</blockquote>
+</li>
+</ul>
+<p>2.2 对数交换<br>对数与对比度拉伸变换是进行动态范围处理的基本工具。<br>对数数学变换表达式：</p>
+<figure class="highlight isbl"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">g</span>=<span class="variable">c</span>*<span class="function"><span class="title">log</span>(<span class="number">1</span>+<span class="title">double</span>(<span class="variable">f</span>))</span></span><br></pre></td></tr></table></div></figure>
+<p>其MATLAB表达式：如8比特</p>
+<figure class="highlight lisp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">g=im2uint8(<span class="name">mat2gray</span>(<span class="name">g</span>))</span><br></pre></td></tr></table></div></figure>
+<p>2.3 对比度拉伸变换<br>对比度拉伸数学表达式为：</p>
+<figure class="highlight lisp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">s=T(<span class="name">r</span>)=1/(<span class="number">1</span>+(<span class="name">m/r</span>)^E)</span><br></pre></td></tr></table></div></figure>
+<p>其MATLAB表达式：</p>
+<figure class="highlight angelscript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">g=<span class="number">1.</span>/<span class="number">1</span>+(m./<span class="built_in">double</span>(f)).^E</span><br></pre></td></tr></table></div></figure>
+<p>2.4对于灰度变换的使用M函数</p>
+<ul>
+<li>获得输入/输出参数个数及其检测的函数：<ol>
+<li>n=nargin—-用于获得输入参数个数，n是number的缩写，arg指参数，为输入。</li>
+<li>n=nargout—-用于获得输出参数个数，n是number的缩写，arg指参数，为输出。</li>
+<li>msg=nargchk(low,high,number)—-检测传递的参数个数number是否在[low,high]范围中，这是chk是check的缩写。</li>
+<li>cellvar=varargin—–获得可变参数的输入单元数组变量。</li>
+<li>cellvar=varargout—–获得可变参数的输出单元数组变量。</li>
+</ol>
+</li>
+<li>将其他类型的图像转换为浮点数类型图像：<figure class="highlight cs"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="meta">g,revertclass</span>]=tofloat(f)</span><br></pre></td></tr></table></div></figure></li>
+</ul>
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感觉您的阅读 ------</div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="http://19960218.xyz/tags/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/">数字图像处理</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="http://19960218.xyz/tags/%E5%8A%A9%E6%95%99%E8%AF%BE%E7%A8%8B/">助教课程</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="http://19960218.xyz/tags/MATLAB/">MATLAB</a></span></div><nav class="post-paginator paginator"><div class="paginator-next"><a class="paginator-next__link" href="/2020/04/18/%E5%A4%9C%E6%B7%B1%E4%BA%BA%E9%9D%99%EF%BC%8C%E5%86%99%E7%AF%87%E5%B0%8F%E7%BB%93/"><span class="paginator-prev__text">夜深人静，写篇小结</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#MATLAB入门"><span class="toc-number">1.</span> <span class="toc-text">
+          MATLAB入门
+        </span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#图像处理基础"><span class="toc-number">2.</span> <span class="toc-text">
+          图像处理基础
         </span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、图像变换与空间滤波"><span class="toc-number">3.</span> <span class="toc-text">
           三、图像变换与空间滤波
         </span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#图像变换"><span class="toc-number">3.1.</span> <span class="toc-text">
           图像变换
+        </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#图像间的运算"><span class="toc-number">3.2.</span> <span class="toc-text">
+          图像间的运算
+        </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#图像的灰度运算"><span class="toc-number">3.3.</span> <span class="toc-text">
+          图像的灰度运算
         </span></a></li></ol></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/head.jpg" alt="avatar"></div><p class="sidebar-ov-author__text">世界这么大，让我来康康</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/GOTHz1" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span></a><a class="sidebar-ov-social-item" href="mailto:gothz1@outlook.com" target="_blank" rel="noopener" data-popover="email" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-envelope-square"></i></span></a><a class="sidebar-ov-social-item" href="tencent://message/?uin=1337709506&amp;Site=&amp;Menu=yes" target="_blank" rel="noopener" data-popover="QQ" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-qq"></i></span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">7</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">5</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">12</div><div class="sidebar-ov-state-item__name">标签</div></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2020</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>GOTH</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=1.7.0"></script><script src="/js/stun-boot.js?v=1.7.0"></script><script src="/js/scroll.js?v=1.7.0"></script><script src="/js/header.js?v=1.7.0"></script><script src="/js/sidebar.js?v=1.7.0"></script></body></html>
