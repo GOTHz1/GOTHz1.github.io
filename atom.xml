@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://19960218.xyz/"/>
-  <updated>2020-09-24T11:53:14.563Z</updated>
+  <updated>2021-01-23T12:40:04.486Z</updated>
   <id>http://19960218.xyz/</id>
   
   <author>
@@ -15,6 +15,50 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>网络编程</title>
+    <link href="http://19960218.xyz/2021/01/23/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
+    <id>http://19960218.xyz/2021/01/23/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/</id>
+    <published>2021-01-23T12:40:04.000Z</published>
+    <updated>2021-01-23T12:40:04.486Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Python基础</title>
+    <link href="http://19960218.xyz/2020/10/13/Python%E5%9F%BA%E7%A1%80/"/>
+    <id>http://19960218.xyz/2020/10/13/Python%E5%9F%BA%E7%A1%80/</id>
+    <published>2020-10-13T10:58:39.000Z</published>
+    <updated>2020-10-14T03:00:55.590Z</updated>
+    
+    <content type="html"><![CDATA[<!--整理python少部分知识的1-->        <h1   id="for循环" >          <span class="heading-link">for循环</span>        </h1>      <figure class="highlight applescript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">list</span>:</span><br></pre></td></tr></table></div></figure><p>range:</p><figure class="highlight pgsql"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i=range(<span class="number">5</span>):</span><br><span class="line"><span class="keyword">for</span> i=range(<span class="keyword">start</span>,<span class="keyword">end</span>,step):</span><br></pre></td></tr></table></div></figure>        <h1   id="list" >          <span class="heading-link">list</span>        </h1>      <p>创建普通列表:</p><figure class="highlight ini"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">list</span>=[<span class="string">'小红'</span>,<span class="string">'小明'</span>,<span class="string">'小刚'</span>]</span><br></pre></td></tr></table></div></figure><p>混合列表:</p><figure class="highlight lsl"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">list</span>=['小红',<span class="number">22</span>,[<span class="number">1</span>,<span class="number">2</span>]]</span><br></pre></td></tr></table></div></figure><p>空列表：</p><figure class="highlight ini"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">list</span>=[]</span><br></pre></td></tr></table></div></figure><p>列表扩展:</p><figure class="highlight vim"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">list</span>.<span class="keyword">append</span>(<span class="string">'a'</span>)</span><br><span class="line"><span class="keyword">list</span>.<span class="built_in">extend</span>([<span class="string">'a'</span>,<span class="string">'b'</span>])</span><br><span class="line"><span class="keyword">list</span>.<span class="keyword">insert</span>(<span class="number">1</span>,<span class="string">'c'</span>)</span><br></pre></td></tr></table></div></figure><p>列表删除：</p><figure class="highlight vim"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">list</span>.<span class="built_in">remove</span>(<span class="string">'name'</span>)</span><br><span class="line">del <span class="keyword">list</span>[<span class="number">1</span>]</span><br><span class="line"><span class="keyword">list</span>.<span class="keyword">pop</span>()</span><br><span class="line"><span class="keyword">list</span>.<span class="keyword">pop</span>(<span class="number">1</span>)</span><br></pre></td></tr></table></div></figure><p>列表分页：</p><figure class="highlight vim"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">list</span>[<span class="variable">a:b</span>]</span><br></pre></td></tr></table></div></figure><p>列表比较：</p><figure class="highlight shell"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">list1&gt;</span><span class="bash">list2 </span></span><br><span class="line">比较的是第一个元素的大小</span><br></pre></td></tr></table></div></figure><p>列表操作：</p><figure class="highlight applescript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">list</span>=list1+list2<span class="comment">#结果为两个列表的拼接</span></span><br><span class="line"><span class="built_in">list</span>=list1*<span class="number">3</span><span class="comment">#结果为list复制3遍</span></span><br><span class="line"><span class="built_in">list</span>.<span class="built_in">reverse</span><span class="comment">#列表反转</span></span><br><span class="line"><span class="built_in">list</span>=list1[:]<span class="comment">#复制列表</span></span><br></pre></td></tr></table></div></figure>        <h1   id="元组tuple" >          <span class="heading-link">元组tuple</span>        </h1>      <p>受约束的列表<br>创建元组</p><figure class="highlight angelscript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tuple=<span class="number">1</span>,</span><br><span class="line">tuple=<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span></span><br><span class="line">tuple=(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>)</span><br></pre></td></tr></table></div></figure><p>修改元组：</p><figure class="highlight nimrod"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">tuple</span>=<span class="keyword">tuple</span>(:<span class="number">1</span>)+<span class="string">"字符"</span>,+<span class="keyword">tuple</span>(<span class="number">2</span>:)<span class="comment">#利用切片</span></span><br></pre></td></tr></table></div></figure>        <h1   id="函数" >          <span class="heading-link">函数</span>        </h1>      <p>函数定义：</p><figure class="highlight kotlin"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">def <span class="function"><span class="title">fun</span><span class="params">()</span></span>:</span><br><span class="line"><span class="string">'这是函数文档'</span></span><br><span class="line">#这是注释</span><br><span class="line"><span class="keyword">return</span></span><br></pre></td></tr></table></div></figure><p>打印函数文档：</p><figure class="highlight crystal"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fun</span>.<span class="title">__doc__</span></span></span><br></pre></td></tr></table></div></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;!--整理python少部分知识的1--&gt;
+
+        &lt;h1   id=&quot;for循环&quot; &gt;
+          &lt;span class=&quot;heading-link&quot;&gt;for循环&lt;/span&gt;
+        &lt;/h1&gt;
+      &lt;figure class=&quot;high
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Python" scheme="http://19960218.xyz/tags/Python/"/>
+    
+  </entry>
   
   <entry>
     <title>数字图像处理笔记</title>
