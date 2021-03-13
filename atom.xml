@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://19960218.xyz/"/>
-  <updated>2021-01-23T12:40:04.486Z</updated>
+  <updated>2021-03-13T14:06:05.701Z</updated>
   <id>http://19960218.xyz/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Machine Learning(Hung-yi Lee)</title>
+    <link href="http://19960218.xyz/2021/03/13/Machine%20Learning(Hung-yi%20Lee)/"/>
+    <id>http://19960218.xyz/2021/03/13/Machine%20Learning(Hung-yi%20Lee)/</id>
+    <published>2021-03-13T07:30:03.000Z</published>
+    <updated>2021-03-13T14:06:05.701Z</updated>
+    
+    <content type="html"><![CDATA[<p>2020年李宏毅机器学习课程。<span class="exturl"><a class="exturl__link"   href="https://speech.ee.ntu.edu.tw/~hylee/ml/2020-spring.html"  target="_blank" rel="noopener">连接</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span><br>此Blog记录较省略，只适用于作者。</p><a id="more"></a><p>学习路线：<img src="/img/ML-2-scaled.jpg" alt="学习路线">  </p>        <h2   id="Regression" >          <span class="heading-link">Regression</span>        </h2>              <h3   id="例：宝可梦的pc值" >          <span class="heading-link">例：宝可梦的pc值</span>        </h3>      <p>Model：<img src="/img/ML/baokemengy.jpg" alt="函数"><br>损失函数：<img src="/img/ML/baokemengloss.jpg" alt="LossFuntion"><br>求：！<a href="/img/ML/minLossFun.jpg">w,b</a><br>对w，b求偏微分1<a href="/img/ML/dydx.png">w,b偏微分</a><br>求得：<br><code>b=-188.4</code><br><code>w=2.7</code><br>则：<br><code>y=-188.4+2.7X(n)</code><br>Training Data：<br><code>average Error:31.9</code><br>Testing Data:<br><code>average Error:35.0</code></p><p>选择其他Model如：<br><img src="/img/ML/fun2.jpg" alt="fun2"><br>求得:<br><code>b=-10.3</code><br><code>w1=1.0</code><br><code>w2=2.7×10^-3</code><br>则：<br><code>y=-188.4+2.7X(n)</code><br>Training Data：<br><code>average Error:15.4</code><br>Testing Data:<br><code>average Error:18.4</code>  </p><p><strong>More Model:</strong> 在训练集上Model越复杂，error越低。测试集上越高，导致 <em>Overfitting</em>  </p><p>重新设计Model（宝可梦）：<br>model与种类有关，设计不同种类得model<br>model：<img src="/img/ML/redesignModel.jpg" alt="model"><br>result:<img src="/img/ML/result.jpg" alt="result"></p><p>那PC值可能与其他因素有关（如，高度）：<br>Redesign Model:<br><img src="/img/ML/redesignagin.jpg" alt="redesignagin"><br>Regularization：<br><img src="/img/ML/Regularization.jpg" alt="Regularization"><br><strong>平滑程度与b无关，无需考虑b</strong><br>Result：<br><img src="/img/ML/regularizationResult.jpg" alt="Result"><br><code>结论，λ=100时候，最合适</code></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;2020年李宏毅机器学习课程。&lt;span class=&quot;exturl&quot;&gt;&lt;a class=&quot;exturl__link&quot;   href=&quot;https://speech.ee.ntu.edu.tw/~hylee/ml/2020-spring.html&quot;  target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;连接&lt;/a&gt;&lt;span class=&quot;exturl__icon&quot;&gt;&lt;i class=&quot;fas fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;此Blog记录较省略，只适用于作者。&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="机器学习" scheme="http://19960218.xyz/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="Machine Learning" scheme="http://19960218.xyz/tags/Machine-Learning/"/>
+    
+  </entry>
   
   <entry>
     <title>网络编程</title>
