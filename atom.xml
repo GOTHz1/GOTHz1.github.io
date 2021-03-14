@@ -44,20 +44,21 @@
     <link href="http://19960218.xyz/2021/01/23/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
     <id>http://19960218.xyz/2021/01/23/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/</id>
     <published>2021-01-23T12:40:04.000Z</published>
-    <updated>2021-03-14T05:09:31.729Z</updated>
+    <updated>2021-03-14T05:11:36.997Z</updated>
     
-    <content type="html"><![CDATA[        <h1   id="传输控制层" >          <span class="heading-link">传输控制层</span>        </h1>      <ol><li>TCP<br>面向<strong>连接</strong>的<strong>可靠</strong>的传输<br>三次握手建立连接：<br>1：客户端-&gt;服务端：syn<br>2：服务端-&gt;客户端：syn_ack<br>3：客户端-&gt;服务端：ack<br>连接：三次握手后建立资源，结构体，缓冲区<br>连接-&gt;三次握手-&gt;数据发送-&gt;四次分手<br>四次分手：<br>1： 客户端-&gt;服务端：fin<br>2： 服务端-&gt;客户端：fin_ack<br>3： 服务端-&gt;客户端：fin<br>4： 客户端-&gt;服务端：ack</li><li>socket（套接字）<br>主机：服务器，ip+port:ip+port<br>ip：主机/服务器地址<br>port：程序/进程<br>port大小：65535<br>例：ip(主机A)+port(0-65535):ip(服务器B)+port(80)<br>服务器A与主机B最多65535个连接        <h1   id="网络层" >          <span class="heading-link">网络层</span>        </h1>      </li><li>IP地址<br>组成：网络号+主机号<br>IP，掩码，</li></ol>]]></content>
+    <content type="html"><![CDATA[<a id="more"></a>        <h1   id="传输控制层" >          <span class="heading-link">传输控制层</span>        </h1>      <ol><li>TCP<br>面向<strong>连接</strong>的<strong>可靠</strong>的传输<br>三次握手建立连接：<br>1：客户端-&gt;服务端：syn<br>2：服务端-&gt;客户端：syn_ack<br>3：客户端-&gt;服务端：ack<br>连接：三次握手后建立资源，结构体，缓冲区<br>连接-&gt;三次握手-&gt;数据发送-&gt;四次分手<br>四次分手：<br>1： 客户端-&gt;服务端：fin<br>2： 服务端-&gt;客户端：fin_ack<br>3： 服务端-&gt;客户端：fin<br>4： 客户端-&gt;服务端：ack</li><li>socket（套接字）<br>主机：服务器，ip+port:ip+port<br>ip：主机/服务器地址<br>port：程序/进程<br>port大小：65535<br>例：ip(主机A)+port(0-65535):ip(服务器B)+port(80)<br>服务器A与主机B最多65535个连接        <h1   id="网络层" >          <span class="heading-link">网络层</span>        </h1>      </li><li>IP地址<br>组成：网络号+主机号<br>IP，掩码，</li></ol>]]></content>
     
     <summary type="html">
     
       
       
-        
+        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+
         &lt;h1   id=&quot;传输控制层&quot; &gt;
           &lt;span class=&quot;heading-link&quot;&gt;传输控制层&lt;/span&gt;
         &lt;/h1&gt;
       &lt;ol&gt;
-&lt;li&gt;TCP&lt;br&gt;面向&lt;strong&gt;连接&lt;/strong&gt;的&lt;str
+&lt;li&gt;TCP&lt;br&gt;面向&lt;stron
       
     
     </summary>
