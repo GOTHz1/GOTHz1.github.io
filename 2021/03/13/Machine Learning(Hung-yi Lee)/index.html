@@ -1,0 +1,220 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.6.2" type="image/png" sizes="32x32"><meta name="description" content="2020年李宏毅机器学习课程。连接此Blog记录较省略，只适用于作者。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Machine Learning(Hung-yi Lee)">
+<meta property="og:url" content="http://19960218.xyz/2021/03/13/Machine%20Learning(Hung-yi%20Lee)/index.html">
+<meta property="og:site_name" content="GOTH">
+<meta property="og:description" content="2020年李宏毅机器学习课程。连接此Blog记录较省略，只适用于作者。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://19960218.xyz/img/ML-2-scaled.jpg">
+<meta property="og:image" content="http://19960218.xyz/img/ML/baokemengy.jpg">
+<meta property="og:image" content="http://19960218.xyz/img/ML/baokemengloss.jpg">
+<meta property="og:image" content="http://19960218.xyz/img/ML/minLossFun.jpg">
+<meta property="og:image" content="http://19960218.xyz/img/ML/dydx.png">
+<meta property="og:image" content="http://19960218.xyz/img/ML/fun2.jpg">
+<meta property="og:image" content="http://19960218.xyz/img/ML/redesignModel.jpg">
+<meta property="og:image" content="http://19960218.xyz/img/ML/result.jpg">
+<meta property="og:image" content="http://19960218.xyz/img/ML/redesignagin.jpg">
+<meta property="og:image" content="http://19960218.xyz/img/ML/Regularization.jpg">
+<meta property="og:image" content="http://19960218.xyz/img/ML/regularizationResult.jpg">
+<meta property="og:image" content="http://19960218.xyz/img/ML/gradientDescent.jpg">
+<meta property="og:image" content="http://19960218.xyz/img/ML/Adagrad.jpg">
+<meta property="og:image" content="http://19960218.xyz/img/ML/gt.jpg">
+<meta property="og:image" content="http://19960218.xyz/img/ML/FeatureScaling.jpg">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=g_t=%5Cnabla+f(w_t)">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=m_t+=+%5Cphi(g_1,+g_2,+%5Ccdots,+g_t);+V_t+=+%5Cpsi(g_1,+g_2,+%5Ccdots,+g_t)">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Ceta_t+=+%5Calpha+%5Ccdot+m_t+/+%5Csqrt%7BV_t%7D">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=w_%7Bt+1%7D+=+w_t+-+%5Ceta_t">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=m_t+=+%5Cbeta_1+%5Ccdot+m_%7Bt-1%7D+++(1-%5Cbeta_1)%5Ccdot+g_t">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=1/(1-%5Cbeta_1)">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cbeta_1">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=g_t=%5Cnabla+f(w_t-%5Calpha+%5Ccdot+m_%7Bt-1%7D+/+%5Csqrt%7BV_%7Bt-1%7D%7D)">
+<meta property="og:image" content="http://19960218.xyz/img/ML/DLRecipe.jpg">
+<meta property="og:image" content="http://19960218.xyz/img/ML/recipeDL.jpg">
+<meta property="article:published_time" content="2021-03-13T07:30:03.000Z">
+<meta property="article:modified_time" content="2021-03-24T13:06:15.653Z">
+<meta property="article:author" content="GOTH">
+<meta property="article:tag" content="机器学习">
+<meta property="article:tag" content="Machine Learning">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://19960218.xyz/img/ML-2-scaled.jpg"><title>Machine Learning(Hung-yi Lee) | GOTH</title><link ref="canonical" href="http://19960218.xyz/2021/03/13/Machine%20Learning(Hung-yi%20Lee)/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":false},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">GOTH</div><div class="header-banner-info__subtitle"></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">Machine Learning(Hung-yi Lee)</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-03-13</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-03-24</span></span></div></header><div class="post-body"><p>2020年李宏毅机器学习课程。<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://speech.ee.ntu.edu.tw/~hylee/ml/2020-spring.html" >连接</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span><br>此Blog记录较省略，只适用于作者。</p>
+<span id="more"></span>
+
+<p>学习路线：<img src="/img/ML-2-scaled.jpg" alt="学习路线">  </p>
+
+        <h2 id="Regression"   >
+          <a href="#Regression" class="heading-link"><i class="fas fa-link"></i></a><a href="#Regression" class="headerlink" title="Regression"></a>Regression</h2>
+      
+        <h3 id="例：宝可梦的pc值"   >
+          <a href="#例：宝可梦的pc值" class="heading-link"><i class="fas fa-link"></i></a><a href="#例：宝可梦的pc值" class="headerlink" title="例：宝可梦的pc值"></a>例：宝可梦的pc值</h3>
+      <p>Model：<img src="/img/ML/baokemengy.jpg" alt="函数"><br>损失函数：<img src="/img/ML/baokemengloss.jpg" alt="LossFuntion"><br>求：<img src="/img/ML/minLossFun.jpg" alt="w,b"><br>对w，b求偏微分<img src="/img/ML/dydx.png" alt="w,b偏微分"><br>求得：<br><code>b=-188.4</code><br><code>w=2.7</code><br>则：<br><code>y=-188.4+2.7X(n)</code><br>Training Data：<br><code>average Error:31.9</code><br>Testing Data:<br><code>average Error:35.0</code></p>
+<p>选择其他Model如：<br><img src="/img/ML/fun2.jpg" alt="fun2"><br>求得:<br><code>b=-10.3</code><br><code>w1=1.0</code><br><code>w2=2.7×10^-3</code><br>则：<br><code>y=-188.4+2.7X(n)</code><br>Training Data：<br><code>average Error:15.4</code><br>Testing Data:<br><code>average Error:18.4</code>  </p>
+<p><strong>More Model:</strong> 在训练集上Model越复杂，error越低。测试集上越高，导致 <em>Overfitting</em>  </p>
+<p>重新设计Model（宝可梦）：<br>model与种类有关，设计不同种类得model<br>model：<img src="/img/ML/redesignModel.jpg" alt="model"><br>result:<img src="/img/ML/result.jpg" alt="result"></p>
+<p>那PC值可能与其他因素有关（如，高度）：<br>Redesign Model:<br><img src="/img/ML/redesignagin.jpg" alt="redesignagin"><br>Regularization：<br><img src="/img/ML/Regularization.jpg" alt="Regularization"><br><strong>平滑程度与b无关，无需考虑b</strong><br>Result：<br><img src="/img/ML/regularizationResult.jpg" alt="Result"><br><code>结论，λ=100时候，最合适</code>  </p>
+
+        <h3 id="Basic-Concept"   >
+          <a href="#Basic-Concept" class="heading-link"><i class="fas fa-link"></i></a><a href="#Basic-Concept" class="headerlink" title="Basic Concept"></a>Basic Concept</h3>
+      <p>Bias and Variance(偏差与方差)</p>
+<ul>
+<li>Bias大: <strong>Underfintting</strong>(<code>Model cannot fit the training examples</code>)</li>
+<li>Variance 大:<strong>Overfitting</strong>(<code>Can fit training data, but large error on testing data</code>)  </li>
+</ul>
+<p><em><strong>Bias 大:</strong></em></p>
+<ul>
+<li>Redesign model:  <ul>
+<li>增加特征</li>
+<li>更复杂的Model</li>
+</ul>
+</li>
+</ul>
+<p><em><strong>Variance 大：</strong></em></p>
+<ul>
+<li>More data</li>
+<li>Regularization(有可能伤害Bais)</li>
+</ul>
+
+        <h2 id="Gradient-Descent"   >
+          <a href="#Gradient-Descent" class="heading-link"><i class="fas fa-link"></i></a><a href="#Gradient-Descent" class="headerlink" title="Gradient Descent"></a>Gradient Descent</h2>
+      <p>梯度下降如图:<br><img src="/img/ML/gradientDescent.jpg" alt="gradientDescent">  </p>
+<p>tip1:  </p>
+<blockquote>
+<p>Learning rates</p>
+<blockquote>
+<p>1.画出Loss变化图，便于观察<br>2.Adaptive Learning rate</p>
+<blockquote>
+<p>2.1. 开始使用较大的Learning rate,随着靠近目标，不断减小Learning rate。如<em><strong>Adagrad</strong></em></p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p><em><strong>Adagrad</strong></em>:<img src="/img/ML/Adagrad.jpg" alt="Adagrad"><br>其中：<img src="/img/ML/gt.jpg" alt="gt"></p>
+<p>tip2:随机梯度下降</p>
+<blockquote>
+<p>Stochastic Gradient Descent(SGD)<br>随机取其中一个example做Loss的Gradient<br>优点：速度快</p>
+</blockquote>
+<p>tip3:特征缩放</p>
+<blockquote>
+<p>Feature Scaling(特征缩放，归一化)<br>不同的feature有共同的scaling</p>
+</blockquote>
+<p><img src="/img/ML/FeatureScaling.jpg" alt="FeatureScaling"></p>
+<p><em><strong>Taylor Series</strong></em></p>
+<p>梯度下降的限制</p>
+<blockquote>
+<p>梯度下降极慢时梯度≈0，停在水平点梯度=0，停在局部最小非极小值</p>
+</blockquote>
+
+        <h3 id="优化器"   >
+          <a href="#优化器" class="heading-link"><i class="fas fa-link"></i></a><a href="#优化器" class="headerlink" title="优化器"></a>优化器</h3>
+      <p>详细参考<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/32230623"><strong>知乎</strong></a>  <a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_40170902/article/details/80092628"><strong>CSDN</strong></a></p>
+<p>梯度下降有三类优化方法。</p>
+<ul>
+<li><em><strong>批量梯度下降(batch、off-line)</strong></em></li>
+<li><em><strong>随机梯度下降(Stochastic Gradient Descent)</strong></em></li>
+<li><em><strong>小批量随机梯度下降(mini-batch stochastic)</strong></em>  </li>
+</ul>
+<p>定义：<br>w：待优化参数<br>f(w):目标函数<br>α：初始学习率<br>迭代优化，在每个epoch <em>t</em></p>
+<ol>
+<li>计算目标函数关于当前参数的梯度：<img   src="https://www.zhihu.com/equation?tex=g_t=%5Cnabla+f(w_t)" style=""  alt="知乎图片"></li>
+<li>根据历史梯度计算一阶动量和二阶动量：<img   src="https://www.zhihu.com/equation?tex=m_t+=+%5Cphi(g_1,+g_2,+%5Ccdots,+g_t);+V_t+=+%5Cpsi(g_1,+g_2,+%5Ccdots,+g_t)" style=""  alt="知乎图片"></li>
+<li>计算当前时刻的下降梯度：<img   src="https://www.zhihu.com/equation?tex=%5Ceta_t+=+%5Calpha+%5Ccdot+m_t+/+%5Csqrt%7BV_t%7D" style=""  alt="知乎图片"></li>
+<li>根据下降梯度进行更新：<img   src="https://www.zhihu.com/equation?tex=w_%7Bt+1%7D+=+w_t+-+%5Ceta_t" style=""  alt="知乎图片"></li>
+</ol>
+<ul>
+<li><p><strong>GD</strong><br>在有限视距内寻找最快路径下山“，因此每走一步，参考当前位置最陡的方向(即梯度)进而迈出下一步。  </p>
+<ul>
+<li><strong>缺点：</strong><ul>
+<li>训练速度慢：每走一步都要要计算调整下一步的方向，下山的速度变慢。在应用于大型数据集中，每输入一个样本都要更新一次参数，且每次迭代都要遍历所有的样本。会使得训练过程及其缓慢，需要花费很长时间才能得到收敛解。</li>
+<li>容易陷入局部最优解：由于是在有限视距内寻找下山的反向。当陷入平坦的洼地，会误以为到达了山地的最低点，从而不会继续往下走。所谓的局部最优解就是鞍点。落入鞍点，梯度为0，使得模型参数不在继续更新。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>BGD</strong><br>在下山之前掌握了附近的地势情况，选择总体平均梯度最小的方向下山。<br>每次权值调整发生在批量样本输入之后，而不是每输入一个样本就更新一次模型参数。这样就会大大加快训练速度。</p>
+</li>
+<li><p><strong>SGD</strong><br>随机梯度下降像是一个盲人下山，不用每走一步计算一次梯度，但是他总能下到山底，只不过过程会显得扭扭曲曲。  </p>
+<ul>
+<li><p><strong>优点：</strong></p>
+<ul>
+<li>虽然SGD需要走很多步的样子，但是对梯度的要求很低（计算梯度快）。而对于引入噪声，大量的理论和实践工作证明，只要噪声不是特别大，SGD都能很好地收敛。</li>
+<li>应用大型数据集时，训练速度很快。比如每次从百万数据样本中，取几百个数据点，算一个SGD梯度，更新一下模型参数。相比于标准梯度下降法的遍历全部样本，每输入一个样本更新一次参数，要快得多。</li>
+</ul>
+</li>
+<li><p><strong>缺点</strong>：</p>
+<ul>
+<li>下降速度慢，而且可能会在沟壑的两边持续震荡，停留在一个局部最优点。  </li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>SGDM</strong><br>SGD with Momentum<br>为了抑制SGD的震荡，SGDM认为梯度下降过程可以加入惯性。下坡的时候，如果发现是陡坡，那就利用惯性跑的快一些。<br>在SGD基础上引入了一阶动量：<br><img   src="https://www.zhihu.com/equation?tex=m_t+=+%5Cbeta_1+%5Ccdot+m_%7Bt-1%7D+++(1-%5Cbeta_1)%5Ccdot+g_t" style=""  alt="知乎图片">一阶动量是各个时刻梯度方向的指数移动平均值，约等于最近 <img   src="https://www.zhihu.com/equation?tex=1/(1-%5Cbeta_1)" style=""  alt="公式"> 个时刻的梯度向量和的平均值。也就是说，t时刻的下降方向，不仅由当前点的梯度方向决定，而且由此前累积的下降方向决定。 <img   src="https://www.zhihu.com/equation?tex=%5Cbeta_1" style=""  alt="公式"> 的经验值为0.9，这就意味着下降方向主要是此前累积的下降方向，并略微偏向当前时刻的下降方向。想象高速公路上汽车转弯，在高速向前的同时略微偏向，急转弯可是要出事的。</p>
+</li>
+<li><p><strong>NAG</strong><br>Nesterov Accelerated Gradient<br>在Momentun中小球会盲目地跟从下坡的梯度，容易发生错误。所以需要一个更聪明的小球，能提前知道它要去哪里，还要知道走到坡底的时候速度慢下来而不是又冲上另一个坡。<br>SGD 还有一个问题是困在局部最优的沟壑里面震荡。想象一下你走到一个盆地，四周都是略高的小山，你觉得没有下坡的方向，那就只能待在这里了。可是如果你爬上高地，就会发现外面的世界还很广阔。因此，我们不能停留在当前位置去观察未来的方向，而要向前一步、多看一步、看远一些。NGA是在SGD、SGD-M的基础上的进一步改进，改进点在于步骤1。我们知道在时刻t的主要下降方向是由累积动量决定的，自己的梯度方向说了也不算，那与其看当前梯度方向，不如先看看如果跟着累积动量走了一步，那个时候再怎么走。因此，NAG在步骤1，不计算当前位置的梯度方向，而是计算如果按照累积动量走了一步，那个时候的下降方向：<br><img   src="https://www.zhihu.com/equation?tex=g_t=%5Cnabla+f(w_t-%5Calpha+%5Ccdot+m_%7Bt-1%7D+/+%5Csqrt%7BV_%7Bt-1%7D%7D)" style=""  alt="知乎图片"><br>然后用下一个点的梯度方向，与历史累积动量相结合，计算步骤2中当前时刻的累积动量。  </p>
+</li>
+<li><p><strong>AdaGrad</strong><br>AdaGrad算法，独立地适应所有模型参数的学习率，缩放每个参数反比于其所有梯度历史平均值总和的平方根。具有代价函数最大梯度的参数相应地有个快速下降的学习率，而具有小梯度的参数在学习率上有相对较小的下降。<br>对出现比较多的类别数据，Adagrad给予越来越小的学习率，而对于比较少的类别数据，会给予较大的学习率。因此Adagrad适用于数据稀疏或者分布不平衡的数据集。</p>
+<ul>
+<li><strong>优点</strong>  <ul>
+<li>不需要人为的调节学习率，它可以自动调节</li>
+</ul>
+</li>
+<li><strong>缺点</strong><ul>
+<li>随着迭代次数增多，学习率会越来越小，最终会趋近于0。  </li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>AdaDelta / RMSPeop</strong><br>RMSProp算法修改了AdaGrad的梯度积累为指数加权的移动平均，使得其在非凸设定下效果更好。<br>AdaGrad算法和RMSProp算法都需要指定全局学习率，AdaDelta算法结合两种算法每次参数的更新步长。  </p>
+</li>
+<li><p><strong>优缺点</strong><br>在模型训练的初期和中期，AdaDelta表现很好，加速效果不错，训练速度快。<br>在模型训练的后期，模型会反复地在局部最小值附近抖动。</p>
+</li>
+<li><p><strong>Adam</strong><br>Adam和Nadam的出现就很自然而然了——它们是前述方法的集大成者。我们看到，SGD-M在SGD基础上增加了一阶动量，AdaGrad和AdaDelta在SGD基础上增加了二阶动量。把一阶动量和二阶动量都用起来，就是Adam了——Adaptive + Momentum。</p>
+</li>
+<li><p><strong>Nadam</strong><br>Nesterov + Adam = Nadam<br>深入参考：</p>
+</li>
+<li><p><span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/32262540" >Adam那么棒，为什么还对SGD念念不忘 (2)—— Adam的两宗罪</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+</li>
+<li><p><span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/32338983" >Adam那么棒，为什么还对SGD念念不忘 (3)—— 优化算法的选择与使用策略</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+</li>
+</ul>
+
+        <h2 id="Classification"   >
+          <a href="#Classification" class="heading-link"><i class="fas fa-link"></i></a><a href="#Classification" class="headerlink" title="Classification"></a>Classification</h2>
+      
+        <h2 id="DeepLearning"   >
+          <a href="#DeepLearning" class="heading-link"><i class="fas fa-link"></i></a><a href="#DeepLearning" class="headerlink" title="DeepLearning"></a>DeepLearning</h2>
+      
+        <h3 id="深度学习步骤"   >
+          <a href="#深度学习步骤" class="heading-link"><i class="fas fa-link"></i></a><a href="#深度学习步骤" class="headerlink" title="深度学习步骤"></a>深度学习步骤</h3>
+      <p>step 1：Neural Network<br>step 2:goodness of function<br>step 3:pick the best function  </p>
+<p><img src="/img/ML/DLRecipe.jpg" alt="DLRecipe.jpg"><br><img src="/img/ML/recipeDL.jpg" alt="recipeDL.jpg"></p>
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="http://19960218.xyz">GOTH</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="http://19960218.xyz/2021/03/13/Machine%20Learning(Hung-yi%20Lee)/">http://19960218.xyz/2021/03/13/Machine%20Learning(Hung-yi%20Lee)/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="http://19960218.xyz/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="http://19960218.xyz/tags/Machine-Learning/">Machine Learning</a></span></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2021/07/03/java%E7%9F%A5%E8%AF%86%E7%82%B9/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">java知识点</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2021/01/23/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"><span class="paginator-prev__text">网络编程</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Regression"><span class="toc-number">1.</span> <span class="toc-text">
+          Regression</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%8B%EF%BC%9A%E5%AE%9D%E5%8F%AF%E6%A2%A6%E7%9A%84pc%E5%80%BC"><span class="toc-number">1.1.</span> <span class="toc-text">
+          例：宝可梦的pc值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Basic-Concept"><span class="toc-number">1.2.</span> <span class="toc-text">
+          Basic Concept</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Gradient-Descent"><span class="toc-number">2.</span> <span class="toc-text">
+          Gradient Descent</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%98%E5%8C%96%E5%99%A8"><span class="toc-number">2.1.</span> <span class="toc-text">
+          优化器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Classification"><span class="toc-number">3.</span> <span class="toc-text">
+          Classification</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DeepLearning"><span class="toc-number">4.</span> <span class="toc-text">
+          DeepLearning</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%AD%A5%E9%AA%A4"><span class="toc-number">4.1.</span> <span class="toc-text">
+          深度学习步骤</span></a></li></ol></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/stun-logo.svg" alt="avatar"></div><p class="sidebar-ov-author__text">hello world</p></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">10</div><div class="sidebar-ov-state-item__name">归档</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2021</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>GOTH</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v5.4.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.6.2</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script></body></html>

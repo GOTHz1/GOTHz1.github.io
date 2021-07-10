@@ -1,0 +1,355 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.6.2" type="image/png" sizes="32x32"><meta name="description" content="常遗忘的JAVA基础知识,整理更新">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java知识点">
+<meta property="og:url" content="http://19960218.xyz/2021/07/03/java%E7%9F%A5%E8%AF%86%E7%82%B9/index.html">
+<meta property="og:site_name" content="GOTH">
+<meta property="og:description" content="常遗忘的JAVA基础知识,整理更新">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-07-03T12:57:37.000Z">
+<meta property="article:modified_time" content="2021-07-07T09:07:09.482Z">
+<meta property="article:author" content="GOTH">
+<meta property="article:tag" content="JAVA">
+<meta name="twitter:card" content="summary"><title>java知识点 | GOTH</title><link ref="canonical" href="http://19960218.xyz/2021/07/03/java%E7%9F%A5%E8%AF%86%E7%82%B9/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":false},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">GOTH</div><div class="header-banner-info__subtitle"></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">java知识点</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-07-03</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-07-07</span></span></div></header><div class="post-body"><p>常遗忘的JAVA基础知识,整理更新</p>
+<span id="more"></span>
+
+
+        <h2 id="接口"   >
+          <a href="#接口" class="heading-link"><i class="fas fa-link"></i></a><a href="#接口" class="headerlink" title="接口"></a>接口</h2>
+      <p>1 成员变量其实是常量，格式:</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="keyword">public</span>][<span class="keyword">static</span>][<span class="keyword">final</span>] 数据类型 名称 = 数据值：  </span><br></pre></td></tr></table></div></figure>
+
+<p>注意</p>
+<blockquote>
+<p>常量必须赋值，不可变<br>常量名完全大写</p>
+</blockquote>
+<p>2 接口中最重要部分为抽象方法，格式：  </p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="keyword">public</span>][<span class="keyword">abstract</span>]返回值类型 方法名称（参数列表）；  </span><br></pre></td></tr></table></div></figure>
+
+<p>注意:</p>
+<blockquote>
+<p>实现类必须覆盖重写接口所有的抽象方法，除非实现类是抽象类  </p>
+</blockquote>
+<p>3 从Java8开始，接口里允许定义默认方法，格式：</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="keyword">public</span>] <span class="keyword">default</span> 返回值类型 方法名称（参数列表）&#123;方法体&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p>注意：</p>
+<blockquote>
+<p>默认方法可以被覆盖重写</p>
+</blockquote>
+<p>4 从Java6 开始，接口里允许定义静态方法，格式：</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="keyword">public</span>] <span class="keyword">static</span> 返回值类型 方法名称（参数列表）&#123;方法体&#125;  </span><br></pre></td></tr></table></div></figure>
+
+<p>注意：</p>
+<blockquote>
+<p>应该通过接口名称进行调用，不能通过实现类对象调用接口静态方法</p>
+</blockquote>
+<p>5 从Java 9开始，接口里允许定义私有方法，格式：  </p>
+<p>1 普通私有方法：</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> 返回值类型 方法名称（参数列表）&#123;方法体&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p>5.2 静态私有方法:</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> 返回值类型 方法名称（参数列表）&#123;方法体&#125;  </span><br></pre></td></tr></table></div></figure>
+
+<p>注意：</p>
+<blockquote>
+<p>private的方法只有接口自己才能调用，不能被实现类或别人使用</p>
+</blockquote>
+<p>6 使用接口注意事项：  </p>
+<ol>
+<li><p>接口没有静态代码块或者构造方法的</p>
+</li>
+<li><p>父类唯一，但可以实现多个接口</p>
+</li>
+<li><p>实现的多个接口存在重复方法，覆盖重写一次即可。</p>
+</li>
+<li><p>没有重新接口中的所有抽象方法，实现类必须定义为抽象类</p>
+</li>
+<li><p>实现的接口中存在重复默认方法，必须对冲突的默认方法进行覆盖重写。</p>
+</li>
+<li><p>父类方法与接口方法冲突，优先父类中的方法</p>
+</li>
+</ol>
+
+        <h2 id="多态"   >
+          <a href="#多态" class="heading-link"><i class="fas fa-link"></i></a><a href="#多态" class="headerlink" title="多态"></a>多态</h2>
+      <p>1 访问成员变量的两种方式：  </p>
+<ol>
+<li>直接通过对象名称访问成员变量：等号左边是谁，优先用谁，没有则往上找</li>
+<li>间接通过成员方法访问成员变量：该方法属于谁，优先用谁，没有则往上找</li>
+</ol>
+<p>2 成员方法的访问方式：</p>
+<ol>
+<li>new谁用谁，没有则上找，直到object</li>
+</ol>
+<p>3 对象向上转型(就是多态写法)<br>格式：</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">父类名称 对项目 = <span class="keyword">new</span> 子类名称();  </span><br></pre></td></tr></table></div></figure>
+
+<p>含义:右侧创建一个子类对象，把它当作父类来用。</p>
+<p>注意</p>
+<blockquote>
+<p>向上转型一定是安全的</p>
+</blockquote>
+<p>4 对象向下转型(还原的动作,类似于强制类型转换)<br>格式:</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">子类名称 对象名称 = (子类名称) 父类对象;</span><br></pre></td></tr></table></div></figure>
+
+<p>含义:将父类对象,还原成本来的子类对象</p>
+<p>例:</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">*class cat extends Animal;</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//向上转型</span></span><br><span class="line">Animal animal = <span class="keyword">new</span> Cat();</span><br><span class="line">animal.eat();</span><br><span class="line"><span class="comment">//向下转型</span></span><br><span class="line">Cat cat = (Cat) animal;</span><br><span class="line">Cat.catchMouse();</span><br><span class="line"><span class="comment">//错误的向下转型,编译正常,运行异常</span></span><br><span class="line">Dog dog = (Dog) animal;</span><br><span class="line"><span class="comment">//instanceof关键字</span></span><br><span class="line"><span class="function">animal <span class="keyword">instanceof</span> <span class="title">Cat</span><span class="params">()</span><span class="comment">//True</span></span></span><br><span class="line"><span class="function">animal <span class="keyword">instanceof</span> <span class="title">Dog</span><span class="params">()</span><span class="comment">//False</span></span></span><br></pre></td></tr></table></div></figure>
+
+<p>注意:</p>
+<blockquote>
+<p>1 向下转型必须保证对象创建时的类型一致,否则:<code>ClassCastException</code><br>2 向下转型一定要通过<code>instanceof</code>判断前面的对象能不能当作后面类型的实例</p>
+</blockquote>
+
+        <h2 id="关键字"   >
+          <a href="#关键字" class="heading-link"><i class="fas fa-link"></i></a><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h2>
+      
+        <h3 id="final"   >
+          <a href="#final" class="heading-link"><i class="fas fa-link"></i></a><a href="#final" class="headerlink" title="final"></a>final</h3>
+      <p>1 修饰类<br>该类无法作为父类==所有成员方法都不能重写</p>
+<p>2 修饰方法<br>该方法无法覆盖重写</p>
+<p>3 修饰一个局部变量<br>基本类型变量值不能更改,引用类型地址不可改变  </p>
+<p>4 修饰成员变量  </p>
+<ol>
+<li><p>基本类型变量值不能更改,必须手动赋值,默认值不可用</p>
+</li>
+<li><p>赋值方式: <strong>直接赋值</strong> ,<strong>构造方法赋值</strong></p>
+</li>
+<li><p>必须所有重载的构造方法,都对final修饰的成员变量赋值.</p>
+</li>
+</ol>
+<p>注意:</p>
+<blockquote>
+<p>abstract final无法同时使用,因为矛盾  </p>
+</blockquote>
+
+        <h2 id="访问修饰符"   >
+          <a href="#访问修饰符" class="heading-link"><i class="fas fa-link"></i></a><a href="#访问修饰符" class="headerlink" title="访问修饰符"></a>访问修饰符</h2>
+      <div class="table-container"><table>
+<thead>
+<tr>
+<th align="right"></th>
+<th align="center"><strong>public</strong></th>
+<th align="center"><strong>protected</strong></th>
+<th align="center"><strong>(default)</strong></th>
+<th><strong>private</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="right">同一个类</td>
+<td align="center">Y</td>
+<td align="center">Y</td>
+<td align="center">Y</td>
+<td>Y</td>
+</tr>
+<tr>
+<td align="right">同一个包</td>
+<td align="center">Y</td>
+<td align="center">Y</td>
+<td align="center">Y</td>
+<td>N</td>
+</tr>
+<tr>
+<td align="right">不同包子类</td>
+<td align="center">Y</td>
+<td align="center">Y</td>
+<td align="center">N</td>
+<td>N</td>
+</tr>
+<tr>
+<td align="right">不同包非子类</td>
+<td align="center">Y</td>
+<td align="center">N</td>
+<td align="center">N</td>
+<td>N</td>
+</tr>
+</tbody></table></div>
+
+        <h2 id="内部类"   >
+          <a href="#内部类" class="heading-link"><i class="fas fa-link"></i></a><a href="#内部类" class="headerlink" title="内部类"></a>内部类</h2>
+      
+        <h3 id="成员内部类"   >
+          <a href="#成员内部类" class="heading-link"><i class="fas fa-link"></i></a><a href="#成员内部类" class="headerlink" title="成员内部类"></a>成员内部类</h3>
+      <p>内部类调用方法<br>1 间接方法: 外部类使用内部类.然后调用外部类方法<br>2 直接方法</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">外部类名称.内部类名称 对象名 = <span class="keyword">new</span> 外部类名称().内部类名称();</span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="局部内部类"   >
+          <a href="#局部内部类" class="heading-link"><i class="fas fa-link"></i></a><a href="#局部内部类" class="headerlink" title="局部内部类"></a>局部内部类</h3>
+      <p>1 类定义在一个方法内部,就是局部内部类,只有当前所属方法才能使用它.</p>
+<p>2 格式:</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Outer</span></span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">methodOuter</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Inner</span></span>&#123;<span class="comment">//局部内部类</span></span><br><span class="line">      <span class="keyword">int</span> n = <span class="number">10</span>;</span><br><span class="line">      System.out.println(n);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    Inner inner = <span class="keyword">new</span> Inner();</span><br><span class="line">    inner.methodInner();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p>通过调用<code>methOuter()</code>方法创建并调用局部内部类</p>
+<p>3 局部内部类final问题</p>
+<p>局部内部类访问所在方法的局部变量必须是<strong>有效的finall</strong></p>
+<blockquote>
+<p>从java8开始final可以省略,但是变量值不能改变  </p>
+</blockquote>
+<p>原因:</p>
+<blockquote>
+<ol>
+<li>new出的方法在堆内存中</li>
+<li>局部变量跟着方法.在栈内存中</li>
+<li>方法运行结束后,立即出栈,局部变量消失.</li>
+<li>new出的对象会在堆当中持续存在.直到gc</li>
+</ol>
+</blockquote>
+<p>小结内部类于权限修饰符</p>
+<blockquote>
+<p>外部类: <strong>public</strong>/<strong>(default)</strong><br>成员内部类:四者皆可<br>局部内部类: <strong>(default)</strong></p>
+</blockquote>
+
+        <h3 id="匿名内部类-（非匿名对象）"   >
+          <a href="#匿名内部类-（非匿名对象）" class="heading-link"><i class="fas fa-link"></i></a><a href="#匿名内部类-（非匿名对象）" class="headerlink" title="匿名内部类 （非匿名对象）"></a>匿名内部类 （非匿名对象）</h3>
+      <p>接口的实现类只使用一次得情况【new 对象的时候】。<br>格式：</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">接口名称 对象名 = <span class="keyword">new</span> 接口名称（）&#123;</span><br><span class="line">  <span class="comment">//覆盖重写所有接口方法</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p>解析  </p>
+<blockquote>
+<ol>
+<li>new代表创建对象的动作  </li>
+<li>接口名称就是匿名内部类需要实现的哪个接口  </li>
+<li>{…}为匿名内部类内容</li>
+</ol>
+</blockquote>
+<p>注意：</p>
+<blockquote>
+<ol>
+<li>匿名内部类:在<strong>创建对象</strong>的时候，只能使用一次</li>
+<li>匿名对象:在<strong>调用方法</strong>得时候，只能调用一次,若想多次调用，必须是非匿名对象</li>
+<li>匿名内部类是省略了<strong>实现类</strong>，匿名对象省略得是名称</li>
+</ol>
+</blockquote>
+
+        <h2 id="线程"   >
+          <a href="#线程" class="heading-link"><i class="fas fa-link"></i></a><a href="#线程" class="headerlink" title="线程"></a>线程</h2>
+      
+        <h3 id="创建多线程"   >
+          <a href="#创建多线程" class="heading-link"><i class="fas fa-link"></i></a><a href="#创建多线程" class="headerlink" title="创建多线程"></a>创建多线程</h3>
+      <p>方法1：创建Thread的子类,并重写run方法</p>
+<p> JDK所给例子：<em>计算大于某一规定值的质数的线程可以写成：</em></p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PrimeThread</span> <span class="keyword">extends</span> <span class="title">Thread</span> </span>&#123;</span><br><span class="line">    <span class="keyword">long</span> minPrime;</span><br><span class="line">    PrimeThread(<span class="keyword">long</span> minPrime) &#123;</span><br><span class="line">        <span class="keyword">this</span>.minPrime = minPrime;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// compute primes larger than minPrime</span></span><br><span class="line">         . . .</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p>创建并启动一个线程</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">PrimeThread p = <span class="keyword">new</span> PrimeThread(<span class="number">143</span>);</span><br><span class="line">p.start();</span><br></pre></td></tr></table></div></figure>
+
+<p>方法二:声明实现<em>Runnable</em>接口的类。该类然后实现<em>run</em>方法</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PrimeRun</span> <span class="keyword">implements</span> <span class="title">Runnable</span> </span>&#123;</span><br><span class="line">    <span class="keyword">long</span> minPrime;</span><br><span class="line">    PrimeRun(<span class="keyword">long</span> minPrime) &#123;</span><br><span class="line">        <span class="keyword">this</span>.minPrime = minPrime;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// compute primes larger than minPrime</span></span><br><span class="line">         . . .</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p>创建并启动一个线程</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">PrimeRun p = <span class="keyword">new</span> PrimeRun(<span class="number">143</span>);</span><br><span class="line"><span class="keyword">new</span> Thread(p).start();</span><br></pre></td></tr></table></div></figure>
+
+<p>两种实现方式区别：<br>实现Runable的优势  </p>
+<blockquote>
+<ol>
+<li>避免了单继承的局限: <strong>继承了Thread无法再继承其他类</strong></li>
+<li>增强了程序的扩展性，降低了程序的耦合性：<strong>实现Runable接口的方法，把设置线程任务和开启新县城进行了分离(解耦)，</strong>  实现类中重写了run方法：<strong>用来设置线程任务创建Thread类对象</strong>，调用start方法：<strong>开启新线程</strong></li>
+</ol>
+</blockquote>
+
+        <h3 id="线程安全问题"   >
+          <a href="#线程安全问题" class="heading-link"><i class="fas fa-link"></i></a><a href="#线程安全问题" class="headerlink" title="线程安全问题"></a>线程安全问题</h3>
+      
+        <h4 id="解决方法1：同步代码块"   >
+          <a href="#解决方法1：同步代码块" class="heading-link"><i class="fas fa-link"></i></a><a href="#解决方法1：同步代码块" class="headerlink" title="解决方法1：同步代码块"></a>解决方法1：同步代码块</h4>
+      <p>同步技术：</p>
+<p>Thread们抢CPU执行权，抢到后进入<code>run()</code>方法。发现同步锁，就会获得锁对象并执行，执行结束后归还锁对象。<br>若没有发现锁对象，进入到阻塞状态等待，直到发现锁对象并执行。</p>
+<blockquote>
+<p>频繁判断锁状态，消耗资源</p>
+</blockquote>
+<p>格式：</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">synchronized</span> (同步锁)&#123;</span><br><span class="line">  需要同步的共享数据代码块</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p><strong>同步锁</strong>：</p>
+<ol>
+<li>锁对象 可以为<strong>任意类型</strong></li>
+<li>多个线程对象，要使用同一把锁</li>
+</ol>
+<p>注意：</p>
+<blockquote>
+<ol>
+<li>通过代码块中的锁对象，可以锁定任意的对象</li>
+<li>必须保证多个线程使用的锁对象是同一个</li>
+<li>锁对象的作用：<strong>把同步代码块锁住，只让一个线程再同步代码块中执行</strong></li>
+</ol>
+</blockquote>
+<p>例：再Runable实现类中使用同步代码块，并new 3 个Thread 调用Runable的同一个子类。</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RunableImpl</span> <span class="keyword">implements</span> <span class="title">Runnable</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> date = <span class="number">10</span>;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">while</span>(<span class="keyword">true</span>)&#123;</span><br><span class="line">          <span class="keyword">if</span>(date&gt;<span class="number">0</span>)&#123;</span><br><span class="line">              <span class="comment">//sleep造成打印数据异常（重复打印，小于0）</span></span><br><span class="line">              <span class="keyword">try</span>&#123;</span><br><span class="line">                  Thread.sleep(<span class="number">10</span>);</span><br><span class="line">              &#125;<span class="keyword">catch</span>(InterruptedException e)&#123;</span><br><span class="line">              e.printStackTrace();</span><br><span class="line">          &#125;</span><br><span class="line"></span><br><span class="line">            System.out.println(date);</span><br><span class="line">            date--;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p>使用同步代码块使其正常打印</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RunableImpl</span> <span class="keyword">implements</span> <span class="title">Runnable</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> date = <span class="number">10</span>;</span><br><span class="line">    Object obj = <span class="keyword">new</span> Object();</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">while</span>(<span class="keyword">true</span>)&#123;</span><br><span class="line">            <span class="comment">//同步代码块</span></span><br><span class="line">            <span class="keyword">synchronized</span>(obj)&#123;</span><br><span class="line">                <span class="keyword">if</span>(date&gt;<span class="number">0</span>)&#123;</span><br><span class="line">                  <span class="comment">//sleep造成数据异常（重复打印，小于0）</span></span><br><span class="line">                    <span class="keyword">try</span>&#123;</span><br><span class="line">                        Thread.sleep(<span class="number">10</span>);</span><br><span class="line">                    &#125;<span class="keyword">catch</span>(InterruptedException e)&#123;</span><br><span class="line">                        e.printStackTrace();</span><br><span class="line">                    &#125;</span><br><span class="line">                    System.out.println(date);</span><br><span class="line">                    date--;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;   </span><br><span class="line">        &#125; </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p>main:</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Runnable r = <span class="keyword">new</span> RunnableImpl();</span><br><span class="line">Thread t0 = <span class="keyword">new</span> Thread(run);</span><br><span class="line">Thread t1 = <span class="keyword">new</span> Thread(run);</span><br><span class="line">Thread t2 = <span class="keyword">new</span> Thread(run);</span><br><span class="line">t0.start();</span><br><span class="line">t0.start();</span><br><span class="line">t0.start();</span><br></pre></td></tr></table></div></figure>
+
+<figure class="highlight java"><figcaption><span>output</span></figcaption><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">10</span></span><br><span class="line"><span class="number">9</span></span><br><span class="line"><span class="number">8</span></span><br><span class="line"><span class="number">7</span></span><br><span class="line"><span class="number">6</span></span><br><span class="line"><span class="number">5</span></span><br><span class="line"><span class="number">4</span></span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="解决方法2：同步方法"   >
+          <a href="#解决方法2：同步方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#解决方法2：同步方法" class="headerlink" title="解决方法2：同步方法"></a>解决方法2：同步方法</h4>
+      <p>格式：</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span>  <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">()</span></span>&#123;<span class="comment">//非静态方法</span></span><br><span class="line">    线程安全问题代码</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span>  <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">()</span></span>&#123;<span class="comment">//静态方法</span></span><br><span class="line">    线程安全问题代码</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p>同步锁：</p>
+<blockquote>
+<ol>
+<li>非static方法，同步锁为this。</li>
+<li>static方法，当前方法坐在类的字节码对象（类名.class）</li>
+</ol>
+</blockquote>
+<p>例：再Runable实现类中使用同步方法，并new 3 个Thread 调用Runable的同一个子类。</p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RunableImpl</span> <span class="keyword">implements</span> <span class="title">Runnable</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> date = <span class="number">10</span>;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">while</span>(<span class="keyword">true</span>)&#123;</span><br><span class="line">            datesub(); </span><br><span class="line">        &#125; </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">dateSub</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="comment">//同步方法</span></span><br><span class="line">        <span class="keyword">if</span>(date&gt;<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="comment">//sleep造成数据异常（重复打印，小于0）</span></span><br><span class="line">            <span class="keyword">try</span>&#123;</span><br><span class="line">                Thread.sleep(<span class="number">10</span>);</span><br><span class="line">            &#125;<span class="keyword">catch</span>(InterruptedException e)&#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println(date);</span><br><span class="line">            date--;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="解决方法3：Locl锁"   >
+          <a href="#解决方法3：Locl锁" class="heading-link"><i class="fas fa-link"></i></a><a href="#解决方法3：Locl锁" class="headerlink" title="解决方法3：Locl锁"></a>解决方法3：Locl锁</h4>
+      <p>优点：<br>比使用synchronized 方法和语句可提供的更广泛的锁定操作。<br>Lock接口中的方法：  </p>
+<figure class="highlight plaintext"><figcaption><span>lock()```:获取锁.</span></figcaption><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">```void unlock()```:释放锁</span><br><span class="line"></span><br><span class="line">```java</span><br><span class="line">public class RunableImpl implements Runnable &#123;</span><br><span class="line">    private final ReetrantrantLocl lock = new ReentrantLock();</span><br><span class="line">    int date = 10;</span><br><span class="line">    @Override</span><br><span class="line">    public void run() &#123;</span><br><span class="line">        while(true)&#123;</span><br><span class="line">            lock.lock();</span><br><span class="line">            if(date&gt;0)&#123;</span><br><span class="line">            //sleep造成数据异常（重复打印，小于0）</span><br><span class="line">            try&#123;</span><br><span class="line">                Thread.sleep(10);</span><br><span class="line">                System.out.println(date);</span><br><span class="line">                date--;</span><br><span class="line">            &#125;catch(InterruptedException e)&#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;finally&#123;</span><br><span class="line">                lock.unlock();//无论如何最后都将释放锁对象</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">        &#125; </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="线程状态"   >
+          <a href="#线程状态" class="heading-link"><i class="fas fa-link"></i></a><a href="#线程状态" class="headerlink" title="线程状态"></a>线程状态</h3>
+      </div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="http://19960218.xyz">GOTH</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="http://19960218.xyz/2021/07/03/java%E7%9F%A5%E8%AF%86%E7%82%B9/">http://19960218.xyz/2021/07/03/java%E7%9F%A5%E8%AF%86%E7%82%B9/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="http://19960218.xyz/tags/JAVA/">JAVA</a></span></div><nav class="post-paginator paginator"><div class="paginator-next"><a class="paginator-next__link" href="/2021/03/13/Machine%20Learning(Hung-yi%20Lee)/"><span class="paginator-prev__text">Machine Learning(Hung-yi Lee)</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A5%E5%8F%A3"><span class="toc-number">1.</span> <span class="toc-text">
+          接口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%9A%E6%80%81"><span class="toc-number">2.</span> <span class="toc-text">
+          多态</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-number">3.</span> <span class="toc-text">
+          关键字</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#final"><span class="toc-number">3.1.</span> <span class="toc-text">
+          final</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BF%E9%97%AE%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="toc-number">4.</span> <span class="toc-text">
+          访问修饰符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E9%83%A8%E7%B1%BB"><span class="toc-number">5.</span> <span class="toc-text">
+          内部类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%88%90%E5%91%98%E5%86%85%E9%83%A8%E7%B1%BB"><span class="toc-number">5.1.</span> <span class="toc-text">
+          成员内部类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B1%80%E9%83%A8%E5%86%85%E9%83%A8%E7%B1%BB"><span class="toc-number">5.2.</span> <span class="toc-text">
+          局部内部类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8C%BF%E5%90%8D%E5%86%85%E9%83%A8%E7%B1%BB-%EF%BC%88%E9%9D%9E%E5%8C%BF%E5%90%8D%E5%AF%B9%E8%B1%A1%EF%BC%89"><span class="toc-number">5.3.</span> <span class="toc-text">
+          匿名内部类 （非匿名对象）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%BF%E7%A8%8B"><span class="toc-number">6.</span> <span class="toc-text">
+          线程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%A4%9A%E7%BA%BF%E7%A8%8B"><span class="toc-number">6.1.</span> <span class="toc-text">
+          创建多线程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98"><span class="toc-number">6.2.</span> <span class="toc-text">
+          线程安全问题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%951%EF%BC%9A%E5%90%8C%E6%AD%A5%E4%BB%A3%E7%A0%81%E5%9D%97"><span class="toc-number">6.2.1.</span> <span class="toc-text">
+          解决方法1：同步代码块</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%952%EF%BC%9A%E5%90%8C%E6%AD%A5%E6%96%B9%E6%B3%95"><span class="toc-number">6.2.2.</span> <span class="toc-text">
+          解决方法2：同步方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%953%EF%BC%9ALocl%E9%94%81"><span class="toc-number">6.2.3.</span> <span class="toc-text">
+          解决方法3：Locl锁</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%BF%E7%A8%8B%E7%8A%B6%E6%80%81"><span class="toc-number">6.3.</span> <span class="toc-text">
+          线程状态</span></a></li></ol></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/stun-logo.svg" alt="avatar"></div><p class="sidebar-ov-author__text">hello world</p></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">10</div><div class="sidebar-ov-state-item__name">归档</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2021</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>GOTH</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v5.4.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.6.2</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script></body></html>

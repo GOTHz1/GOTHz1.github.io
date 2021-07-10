@@ -1,0 +1,397 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.6.2" type="image/png" sizes="32x32"><meta name="description" content="MATLAB入门       1 基本数值运算    MATLAB中的变量必须字母开头，且只能由字母、数字和下划线组成。 变量区分大小写  2 MATLAB矩阵结构">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数字图像处理笔记">
+<meta property="og:url" content="http://19960218.xyz/2020/09/18/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="GOTH">
+<meta property="og:description" content="MATLAB入门       1 基本数值运算    MATLAB中的变量必须字母开头，且只能由字母、数字和下划线组成。 变量区分大小写  2 MATLAB矩阵结构">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s1.ax1x.com/2020/09/22/wLmEnS.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/09/22/wL1mrt.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/09/22/wXGZrj.th.jpg">
+<meta property="og:image" content="https://s1.ax1x.com/2020/09/22/wXGNZR.th.jpg">
+<meta property="og:image" content="https://s1.ax1x.com/2020/09/22/wXaaod.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/09/23/wxsddx.jpg">
+<meta property="og:image" content="https://s1.ax1x.com/2020/09/24/wzoZi4.jpg">
+<meta property="og:image" content="https://s1.ax1x.com/2020/09/24/wzbJBt.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/09/24/0SmztK.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/09/24/0SlAF1.png">
+<meta property="article:published_time" content="2020-09-18T11:41:16.000Z">
+<meta property="article:modified_time" content="2021-03-14T05:56:55.293Z">
+<meta property="article:author" content="GOTH">
+<meta property="article:tag" content="数字图像处理">
+<meta property="article:tag" content="助教课程">
+<meta property="article:tag" content="MATLAB">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s1.ax1x.com/2020/09/22/wLmEnS.png"><title>数字图像处理笔记 | GOTH</title><link ref="canonical" href="http://19960218.xyz/2020/09/18/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%AC%94%E8%AE%B0/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":false},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">GOTH</div><div class="header-banner-info__subtitle"></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">数字图像处理笔记</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2020-09-18</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-03-14</span></span></div></header><div class="post-body">
+        <h2 id="MATLAB入门"   >
+          <a href="#MATLAB入门" class="heading-link"><i class="fas fa-link"></i></a><a href="#MATLAB入门" class="headerlink" title="MATLAB入门"></a>MATLAB入门</h2>
+      <p>1 基本数值运算  </p>
+<ul>
+<li>MATLAB中的变量必须字母开头，且只能由字母、数字和下划线组成。</li>
+<li>变量区分大小写</li>
+</ul>
+<p>2 MATLAB矩阵结构  </p>
+<span id="more"></span>
+
+<p>2.1 <strong>创建矩阵</strong><br>矩阵是MATLAB运算的基础。必须要县确定类型，创建矩阵。<br>创建方法</p>
+<ul>
+<li><em>直接输入矩阵元素</em></li>
+<li><em>调用矩阵创建函数</em> </li>
+</ul>
+<p>2.2 <strong>向量、标量、空矩阵</strong></p>
+<ul>
+<li>向量：行数或列数为1的特殊矩阵<br>例创建10-1的递减向量数列(10:-1:1)</li>
+<li>标量：行列数都为1的特殊矩阵。任意以矩阵表示单个实数或复数</li>
+<li>空矩阵：至少一维的数值为0的矩阵；<br>不是全0的矩阵<br>例：<code>a=[]  用whos查看其名称、大小、数据类型。</code>  </li>
+</ul>
+<p>2.3 <strong>矩阵寻访</strong><br>元素下标：MATLAB中的下标都是从<strong>1</strong>开始的。<br>矩阵的下标表示与常用的数学习惯相同，使用”双下标“（row,column）,分别表示行和列的索引。<br>例：创建矩阵A</p>
+<figure class="highlight matlab"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">A=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>;<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]</span><br><span class="line"></span><br></pre></td></tr></table></div></figure>
+
+<p>则</p>
+<figure class="highlight matlab"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A(<span class="number">2</span>,<span class="number">2</span>) <span class="built_in">ans</span> = <span class="number">5</span></span><br></pre></td></tr></table></div></figure>
+
+<p>用冒号(:)表示矩阵的多个元素。表示等差步进，从而帮助生成向量矩阵。<br>例：在上述矩阵A中。<br>A(i:i+j,n)表示第n列的i~i+j个元素<br>A(m,:)表示M行中的所有元素</p>
+<figure class="highlight matlab"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A(<span class="number">1</span>:<span class="number">2</span>,<span class="number">2</span>)</span><br></pre></td></tr></table></div></figure>
+
+<p>ans=</p>
+<figure class="highlight"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">2</span><br><span class="line">5</span><br></pre></td></tr></table></div></figure>
+
+<figure class="highlight matlab"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A(<span class="number">2</span>,<span class="number">1</span>:<span class="number">3</span>)</span><br></pre></td></tr></table></div></figure>
+
+<p>ans=</p>
+<figure class="highlight basic"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">4 </span><span class="number">5</span> <span class="number">6</span></span><br></pre></td></tr></table></div></figure>
+
+<p>2.4 <strong>获取矩阵存储信息</strong><br>如下表所示：  </p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th align="left">函数</th>
+<th align="left">功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">length</td>
+<td align="left">矩阵的最长维长度</td>
+</tr>
+<tr>
+<td align="left">ndims</td>
+<td align="left">矩阵的维度</td>
+</tr>
+<tr>
+<td align="left">numel</td>
+<td align="left">矩阵的元素个数</td>
+</tr>
+<tr>
+<td align="left">size</td>
+<td align="left">矩阵指定维的长度</td>
+</tr>
+</tbody></table></div>
+<p>3 MATLAB数组<br>3.1 数组索引<br>向量的元素可以使用单一的索引值(下标)来访问。<br>[]来定义数组或者矩阵，用()来引用其中的元素。<br>可以用一个向量作为另一个向量的索引。<br>例：<br>v([1 4 5])表示数组v的第1、4、5个元素<br>3.2 单元数组</p>
+<ul>
+<li>单元数组提供了在一个变量名下组合一组对象（如：数字、字符、其他单元矩阵）的方法。</li>
+<li>用name{}查看单位数组元素，name()查看其描述。</li>
+</ul>
+<p>4 函数句柄<br>M文件是MATLAB脚本。<br>4.1 两种类型</p>
+<ul>
+<li>命名函数句柄：@+函数名称如<strong>f=@sin</strong></li>
+<li>匿名函数句柄：由@+MATLAB表达式形成。<br>M文件由以下部分组成：函数定义行、H1行、帮助文本、函数体、注释。</li>
+</ul>
+<p>5 MATLAB运算符<br>5.1 算数运算符</p>
+<ul>
+<li>矩阵算数运算符—-按线性代数的规则定义</li>
+<li>数组运算符—-逐个元素地执行，且可以用于多维数组。</li>
+</ul>
+<p>tip</p>
+<blockquote>
+<p>使用 <em><strong>“.”</strong></em> 来区分数组运算和矩阵运算。<br>A*B —-表示矩阵叉乘<br>A.*B—-表示矩阵对应元素的点乘</p>
+</blockquote>
+
+        <h2 id="图像处理基础"   >
+          <a href="#图像处理基础" class="heading-link"><i class="fas fa-link"></i></a><a href="#图像处理基础" class="headerlink" title="图像处理基础"></a>图像处理基础</h2>
+      <p>1 图象和数字图像<br>1.1 图象的定义<br>用于各种观察系统以不同形式和手段观测客观世界而获得的，可以直接或间接作用域人眼并产生视觉知觉的实体。<br>1.2 图像的类型</p>
+<ul>
+<li>广义：图片。动画，绘图，文字/文档</li>
+<li>狭义：单幅-&gt;序列图像，静止-&gt;运动图像（视频），2D-&gt;3D，灰度-&gt;深度  </li>
+</ul>
+<p>2 图像的数字表达<br>2.1 图像的表示<br>2-D数组f(x,y)<br>&emsp;x,y:2-D空间XY中坐标点的位置<br>&emsp;f:代表图象在（x,y）的性质F的数值<br>&emsp;f,x,y的值可以是任意实数<br>&emsp;性质F:可对应不同物理量，<br>2.2 空间分辨率和幅度分辨率<br>&emsp;图像必须需要在空间和灰度上都离散化才能被计算机处理，称为量化过程。<br>&emsp;空间坐标的离散化称为空间采样,确定图像的空间分辨率。<br>&emsp;灰度值的离散化成为灰度量化，确定图像的幅度分辨率。<br>分辨率与数据量：不同的量化精度确定了图像不同分辨率，以及分辨率紧密联系的数据量。  </p>
+<p>tip  </p>
+<blockquote>
+<p>一幅图像的尺寸（空间分辨率）为M*N,表明该图像包含MN个像素。如果每个像素都用G个灰度值的一个来赋值，表明在成像时量化了G个灰度级（幅度分辨率）。<br>存储一幅图像所需的数据量由图像的空间分辨率和幅度分辨率共同决定。  </p>
+</blockquote>
+<p>tip2</p>
+<blockquote>
+<p>存储一幅图像所需的位数b（单位为比特，bit）为:<br>b=M*N*k<br>k为存储每个像素所需的bit数量</p>
+</blockquote>
+<p>3 坐标约定</p>
+<p>在MATLAB中用(r,c)表示行和列，坐标系原点在(1,1)处，水平向右为c垂直向下为r。<br>如下图M行、N列的一幅图像f(x,y)。r的最大值为M，c的最大值为N。<br><img src="https://s1.ax1x.com/2020/09/22/wLmEnS.png" alt="wLmEnS.png"></p>
+<p>4 图像的输入输出和显示</p>
+<p>4.1 imread方法<br>&emsp;f=imread(‘filename.jpg’)文件可采用当前路径、绝对路径、相对路径。<br>&emsp;其中f为获得的图像数组。  </p>
+<p>4.2 imshow方法<br>用法为imshow(f)。 </p>
+<p>4.3 imwrite方法<br>用法：imwrite(f,’outf.jpg’)；同样可自定义路径。  </p>
+<blockquote>
+<p>如：</p>
+</blockquote>
+<figure class="highlight matlab"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">imwrite(f,<span class="string">&#x27;E:\DATA\AFile\outf.tif&#x27;</span>)</span><br></pre></td></tr></table></div></figure>
+
+<p>5 数据类<br><img src="https://s1.ax1x.com/2020/09/22/wL1mrt.png" alt="wL1mrt.png">  </p>
+<p>6 图像类型<br>6.1 灰度级图像<br>&emsp;一个数据矩阵,矩阵的值表示灰度浓淡。<br>&emsp;当灰度级图像元素是uint8时具有的范围[0,255]的整数值。<br>&emsp;图像的数据类型是Double或者single，其值就是浮点数。<br>&emsp;double或者single类型的灰度级图像通常会归一化到范围[0,1]。<br>tip:  </p>
+<blockquote>
+<p>uin8类型的图像—-将其每个像素的灰度值除以255得到double或single类型的灰度图像。  </p>
+</blockquote>
+<p>6.2 二值图像  </p>
+<p>&emsp;取值只有0-1的逻辑矩阵。一个数值矩阵转换为二值图像，可使用<strong>logical</strong>函数<br>6.3 RGB图像  </p>
+<ul>
+<li>一副RGB图像是彩色像素的一个M<em>N</em>3数组;  </li>
+<li>每个像素点都从彩色图像相对应的红绿蓝三个分量。（见第六章p144）  </li>
+<li>分量图像的像素比特决定了RGB图像的比特深度。  </li>
+<li>一副RGB图像包含的色彩数范围是(2^b)^3,b是分量图像的比特数。  </li>
+<li>若所有分量图像都是一样的，则RGB图像是一副灰度图像，  </li>
+<li><em>操作：</em>*  </li>
+<li>利用cat（级联）操作符将分量图像fRed,fGreen，fBlue组合成彩色图像:  </li>
+</ul>
+<figure class="highlight matlab"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rgbim=<span class="built_in">cat</span>(<span class="number">3</span>,fRed,fGreen,fBlue)</span><br></pre></td></tr></table></div></figure>
+
+<ul>
+<li>利用rgbim(:,:,i)来获取RGB图像rgbim的某个分量图像。</li>
+<li>rgb2gray命令将彩色图像转换为灰度图像。如下图:<br><a target="_blank" rel="noopener" href="https://imgchr.com/i/wXGZrj"><img src="https://s1.ax1x.com/2020/09/22/wXGZrj.th.jpg" alt="wXGZrj.th.jpg"></a> <a target="_blank" rel="noopener" href="https://imgchr.com/i/wXGNZR"><img src="https://s1.ax1x.com/2020/09/22/wXGNZR.th.jpg" alt="wXGNZR.th.jpg"></a>  </li>
+</ul>
+<p>7 图像工程  </p>
+<p>7.1 图象技术和图像工程<br><em><strong>略</strong></em>  </p>
+<p>7.2 图象工程的三个层次</p>
+<ul>
+<li>图象处理：着重强调图像到图像之间进行的变换。对图像进行各种加工以改善图像的视觉效果并为自动识别打基础，或对图像进行压缩编码以减少对其所需存储空间或传输时间的要求。</li>
+<li>图像分析：对图像中感兴趣的目标进行检测和测量，以获得它们的客观信息从而建立对图像的描述。图像分析是一个从图像到数据的过程，这里数据可以是对目标特征检测的结果或是基于测量的符号表示。</li>
+<li>图像理解：重点是在图像分析的基础上，借助知识、经验等进一步研究图像中各目标的性质和他们之间的相互联系，并得出对图像内容含义的理解以及对原来客观场景的解释，从而指导和规划行动。<br><a target="_blank" rel="noopener" href="https://imgchr.com/i/wXaao"><img src="https://s1.ax1x.com/2020/09/22/wXaaod.png" alt="wXaaod.png"></a></li>
+</ul>
+<p>7.3 图象工程相关科学领域  </p>
+<ul>
+<li>图像识别、图像理解或计算机视觉。</li>
+</ul>
+<p>7.4 图象工程的技术应用  </p>
+<ul>
+<li>视频通信、文字档啊、生物医学、遥感测绘、工业生产、军事公安、交通管理。  </li>
+</ul>
+<p>8 图像处理系统  </p>
+<p>8.1 图像系统构成框图<br>图像系统] –&gt; B[输入] –&gt; C[处理] –&gt; D[存储] –&gt; E[输出]  </p>
+<p>8.2 图像采集</p>
+<ul>
+<li>需要物理器件对某个电磁能量谱波段进行接收并形成模拟的电信号。</li>
+<li>将接受的模拟电信号转换为计算机能处理的数字或者离散的形式。</li>
+</ul>
+<p>8.3 图像显示打印</p>
+<ul>
+<li>1.图像显示  </li>
+<li><strong>略</strong>*</li>
+<li>2.图像半调输出<br>人眼的集成特征，通过控制二值点模式的形式，来获得视觉上不同的灰度感觉.<br>tip:</li>
+</ul>
+<blockquote>
+<p>输出二值图像，看到的为灰度图像。</p>
+</blockquote>
+<ul>
+<li><p>3.图像的幅度调制<br>调整输出黑点的尺寸来显示不同的灰度。<br>二值点是规则的排成网格的点<br>点的形状并不是决定性的因素</p>
+</li>
+<li><p>4.图像的频率调制<br>输出黑点的尺寸是固定的，在空间的分布（点间的间隔或一定区域内点出现的频率）取决于所表示的灰度。<br>缺点:</p>
+</li>
+</ul>
+<blockquote>
+<p>点增益增加————&gt;打印图灰度范围减少或压缩,减少了细节和反差。（点增益增加指打印单元尺寸相对于原始单元尺寸的增加量）<br><strong>调制模板</strong>  </p>
+</blockquote>
+<ul>
+<li>每个输出单元–&gt;若干个基本二值点  </li>
+<li>每个模板–&gt;一个输出单元<br>制模板输出点的尺寸是固定的，但其点的频率或者说密度决定了灰度值。<br>下图为一个模板分成3*3网格可以输出10个灰度：<br><img src="https://s1.ax1x.com/2020/09/23/wxsddx.jpg" alt="wxsddx.jpg">  </li>
+</ul>
+<p>8.4 图像存储</p>
+<ul>
+<li>存储形式<br>图像存储的最小单位为比特（bit）<br>字节（byte=8bit）–&gt;千字节（K byte）–&gt;兆字节（M byte）-&gt;吉字节（G byte）–&gt;太字节（T byte）</li>
+<li>存储器<br>存储过程中使用快速存储器如计算机内存，帧缓存<br>较快调用时如磁盘。<br>较大：磁带光盘</li>
+<li>格式<ul>
+<li>矢量格式<br>用线段或者线段的组合来表示图像（CAD）<br>特点 ：存储小，内容特征突出，不利于描述复杂场景</li>
+<li>光栅格式<br>特点：文件存储较大，内特征不突出，能表现各种复杂场景（BMP，GIF，JEPG，TIFF）  </li>
+</ul>
+</li>
+</ul>
+<p>8.5 图象处理  </p>
+<ul>
+<li>图像增强  </li>
+<li>退化图像恢复  </li>
+<li>根据投影重建图像  </li>
+<li>减少图像编码  </li>
+<li>增加图像水印  </li>
+</ul>
+
+        <h2 id="三、图像变换与空间滤波"   >
+          <a href="#三、图像变换与空间滤波" class="heading-link"><i class="fas fa-link"></i></a><a href="#三、图像变换与空间滤波" class="headerlink" title="三、图像变换与空间滤波"></a>三、图像变换与空间滤波</h2>
+      
+        <h3 id="图像变换"   >
+          <a href="#图像变换" class="heading-link"><i class="fas fa-link"></i></a><a href="#图像变换" class="headerlink" title="图像变换"></a>图像变换</h3>
+      <p>1 图像坐标变换概述  </p>
+<ul>
+<li>空间域处理方法<br>坐标变换，亮度（灰度变换和空间滤波）</li>
+<li>空间域<br>指图像像素位置所在的空间，也称图像空间</li>
+</ul>
+<blockquote>
+<p>坐标变换</p>
+<blockquote>
+<p>将一副图像中的坐标位置映射到另外一副图像中的新坐标位置，不改变图像的像素值，只在图平面上进行像素的重新安排。</p>
+</blockquote>
+</blockquote>
+<p>2 基本坐标变换<br>更详细介绍可查看链接<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://www.matongxue.com/madocs/244" >如何通俗的解释仿射变换？</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span><br>2.1 变换的表达<br>像素点的坐标标记为（x,y）齐次坐标则为（x,y,1）。  </p>
+<blockquote>
+<p>齐次坐标</p>
+<blockquote>
+<p>n维的向量–&gt;n+1维向量<br>例：<br>(x,y)二维向量–&gt;(x,y,1)三维向量  </p>
+</blockquote>
+</blockquote>
+<p>齐次坐标属于投影几何坐标系统常用于仿射变换。<br>v’=AV</p>
+<blockquote>
+<p>A为3<em>3变换矩阵，对于不同的变换，其元素值不同，A唯一确定其变换结果。<br>对于一组m个点的变换，令v1,v2,v3,…vm个组成3</em>m矩阵V，则变换后的点矩阵V’为：</p>
+</blockquote>
+<figure class="highlight matlab"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">V&#x27;=AV</span><br></pre></td></tr></table></div></figure>
+
+<p>2.2 平移、缩放和旋转变换  </p>
+<p><img src="https://s1.ax1x.com/2020/09/24/wzoZi4.jpg" alt="wzoZi4.jpg">  </p>
+<blockquote>
+<p>旋转变换中可按照旋转轴更改仿射矩阵旋转图像，</p>
+</blockquote>
+<p>3 坐标变换扩展  </p>
+<p>3.1 变换级联<br>当图像需要多种旋转方式，可按其变换方式依次相乘。称为变换级联。</p>
+<blockquote>
+<p>级联变换只支持结合律，不支持交换律。</p>
+</blockquote>
+<p>3.2 反变换<br>可根据变换矩阵得出其反变换矩阵<br><a target="_blank" rel="noopener" href="https://imgchr.com/i/wzbJBt"><img src="https://s1.ax1x.com/2020/09/24/wzbJBt.png" alt="wzbJBt.png"></a></p>
+<blockquote>
+<p>变换矩阵和反变换矩阵乘积为单位矩阵。</p>
+</blockquote>
+<p>4 图像变换的MATLAB实现<br>平移：</p>
+<figure class="highlight matlab"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">g=imtranslate(f, r, c);</span><br></pre></td></tr></table></div></figure>
+
+<p>旋转：</p>
+<figure class="highlight matlab"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">g=imrotate(f,a)</span><br></pre></td></tr></table></div></figure>
+
+<p>缩放：</p>
+<figure class="highlight matlab"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">g=imresize(f,scale)//等比缩放</span><br><span class="line">g=imresize(f,scale,method)//含方法的等比缩放</span><br><span class="line">g=imresize(f,[rows,cols]scale)//自定义大小缩放</span><br><span class="line"><span class="comment">% 将图像f缩放至rows行Xcols列的图像g，插值运算使用method方法</span></span><br><span class="line"><span class="comment">% &#x27;nearest&#x27;(默认值)最邻近插值</span></span><br><span class="line"><span class="comment">% &#x27;bilinear&#x27;双线性插值</span></span><br><span class="line"><span class="comment">% &#x27;bicubic&#x27;双三次插值</span></span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="图像间的运算"   >
+          <a href="#图像间的运算" class="heading-link"><i class="fas fa-link"></i></a><a href="#图像间的运算" class="headerlink" title="图像间的运算"></a>图像间的运算</h3>
+      <p>1 图像的算术和逻辑运算  (图象的算术和逻辑运算是逐像素进行的)<br>1.1 算术运算  </p>
+<ol>
+<li>加法：p+q</li>
+<li>减法：p-q</li>
+<li>乘法：p*q</li>
+<li>除法：p÷q  </li>
+</ol>
+<p>1.2 逻辑运算  </p>
+<ol>
+<li>补:p=~q：NOT q</li>
+<li>与:p&amp;q：p AND q</li>
+<li>或:q|p:qp OR q</li>
+<li>异或:xor(p,q)：p XOR q  </li>
+</ol>
+<blockquote>
+<p>MATLAB中将逻辑1或者非零值当作true处理<br>将逻辑0和数值0当作false处理</p>
+</blockquote>
+<p>1.3 图像间算数和逻辑运算的特点  </p>
+<blockquote>
+<p>在(x,y)位置做一个算术运算或逻辑运算的结果可以存在其中一个图像的相应位置。</p>
+</blockquote>
+<p>2 图像间运算的MATLAB运算实现<br><a target="_blank" rel="noopener" href="https://imgchr.com/i/0SmztK"><img src="https://s1.ax1x.com/2020/09/24/0SmztK.png" alt="0SmztK.png"></a>  </p>
+<p>3 图像间运算的应用  </p>
+<p>3.1 图像间加法的运用<br>消除随机噪声处理<br><img src="https://s1.ax1x.com/2020/09/24/0SlAF1.png" alt="0SlAF1.png">  </p>
+<p>3.2 图像间减法的运用  </p>
+<ul>
+<li>设有图像f(x,y)和h(x,y)对它们相减，可获得两图差异：<br>g(x,y)=g(x,y)-h(x,y)</li>
+<li>常用于医学图像处理以消除背景。</li>
+<li>在运动检测中对事件相邻的两幅图求差可以将图像中目标的位置和形状变化凸显出来。</li>
+</ul>
+<p>3.3 图像间乘法和除法的运用  </p>
+<ul>
+<li>校正由于照明或者传感器的非均匀性造成的图像明暗变化.</li>
+<li>模板运输</li>
+</ul>
+
+        <h3 id="图像的灰度运算"   >
+          <a href="#图像的灰度运算" class="heading-link"><i class="fas fa-link"></i></a><a href="#图像的灰度运算" class="headerlink" title="图像的灰度运算"></a>图像的灰度运算</h3>
+      <p>1 图像灰度映射原理  </p>
+<ul>
+<li>将图像f(x,y)中的每个像素的灰度按灰度映射函数E（H）操作直接变换得到图像g(x,y)，以达到增强视觉效果的目的。</li>
+<li>直灰度映射是一种点操作：t=E(H)（s）</li>
+<li>图像灰度映射的关键是根据增强要求设计灰度映射函数，或映射规则。<br>常用的图像灰度映射函数：<br>图像求反、增强对比度、动态范围压缩、灰度切分  </li>
+<li>伽马矫正<br>借助指数变化进行，指数变换形式为：t=Cs^y (s是灰度，自变量；C是常数，γ是实数)</li>
+<li>当γ&lt;1时—-输入中较窄的灰度范围被映射到输出中较宽的灰度范围，而输入中较高的高灰度范围被映射到输出中较窄的灰度范围。</li>
+</ul>
+<blockquote>
+<p>关于伽马校正</p>
+<blockquote>
+<p>为图像进行伽马编码的目的是用来对人类视觉的特性进行补偿，从而根据人类对光线或者黑白的感知，最大化地利用表示黑白的数据位或带宽。在通常的照明（既不是漆黑一片，也不是令人目眩的明亮）的情况下，人类的视觉大体有伽马或者是幂函数的性质。如果不将图像进行伽马编码，那么数据位或者带宽的利用就会分布不均匀——会有过多的数据位或者带宽用来表示人类根本无法察觉到的差异，而用于表示人类非常敏感的视觉感知范围的数据位或者带宽又会不足。图像的伽马编码并不是必须的（甚至有的时候会适得其反），浮点数格式的颜色值已经提供了一部分对数曲线的线性估计。<br>–来自<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E4%BC%BD%E7%91%AA%E6%A0%A1%E6%AD%A3" >《维基百科–伽马校正》</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>  </p>
+</blockquote>
+</blockquote>
+<p>2 灰度变换的MATLAB函数</p>
+<p>2.1 imadjust 和 stretchlim</p>
+<ul>
+<li>函数imadjust用于对灰度级图像进行灰度变换。</li>
+</ul>
+<figure class="highlight matlab"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">g=imadjust(f,[low_in high_in],[low_out high_out],<span class="built_in">gamma</span>)</span><br><span class="line">````</span><br><span class="line"></span><br><span class="line">&gt;输入图像可以是uint8、uint16、single或double类，输出图像和输入图像属于同一类，但其它输入值都被限定在<span class="number">0</span>和<span class="number">1</span>之间，而与f类别无关。  </span><br><span class="line">参数<span class="built_in">gamma</span>指定从图像f中的灰度映射生成图像g的曲线形状，默认为<span class="number">1</span>（线性映射）。</span><br><span class="line"></span><br><span class="line">![<span class="number">0</span>SBbmn.png](https://s1.ax1x.com/<span class="number">2020</span>/<span class="number">09</span>/<span class="number">24</span>/<span class="number">0</span>SBbmn.png)  </span><br><span class="line"></span><br><span class="line">* 函数stretchlim用于获得图像f中灰度级底部和顶部。  </span><br><span class="line"></span><br><span class="line">```matlab</span><br><span class="line">Low_High=stretchlim(f)</span><br></pre></td></tr></table></div></figure>
+
+<blockquote>
+<p>Low_High是一个两元素向量，由灰度级底限和高限组成，默认为图像f中充满灰度级底部和顶部1%的灰度底限和高限。<br>关于灰度变换的具体操作可见 <strong>dip_example0201.m</strong>  </p>
+</blockquote>
+<p>2.2 对数交换<br>对数与对比度拉伸变换是进行动态范围处理的基本工具。<br>对数数学变换表达式：</p>
+<figure class="highlight matlab"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">g=c*<span class="built_in">log</span>(<span class="number">1</span>+double(f))</span><br></pre></td></tr></table></div></figure>
+
+<p>其MATLAB表达式：如8比特</p>
+<figure class="highlight matlab"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">g=im2uint8(mat2gray(g))</span><br></pre></td></tr></table></div></figure>
+
+<p>2.3 对比度拉伸变换</p>
+<p>对比度拉伸数学表达式为：</p>
+<figure class="highlight matlab"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">s=T(r)=<span class="number">1</span>/(<span class="number">1</span>+(m/r)^E)</span><br></pre></td></tr></table></div></figure>
+
+<p>其MATLAB表达式：</p>
+<figure class="highlight matlab"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">g=<span class="number">1.</span>/<span class="number">1</span>+(m./double(f)).^E</span><br></pre></td></tr></table></div></figure>
+
+<p>2.4对于灰度变换的使用M函数</p>
+<ul>
+<li><p>获得输入/输出参数个数及其检测的函数：</p>
+<ol>
+<li>n=nargin—-用于获得输入参数个数，n是number的缩写，arg指参数，为输入。</li>
+<li>n=nargout—-用于获得输出参数个数，n是number的缩写，arg指参数，为输出。</li>
+<li>msg=nargchk(low,high,number)—-检测传递的参数个数number是否在[low,high]范围中，这是chk是check的缩写。</li>
+<li>cellvar=varargin—–获得可变参数的输入单元数组变量。</li>
+<li>cellvar=varargout—–获得可变参数的输出单元数组变量。</li>
+</ol>
+</li>
+<li><p>将其他类型的图像转换为浮点数类型图像：</p>
+</li>
+</ul>
+<figure class="highlight matlab"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[g,revertclass]=tofloat(f)</span><br></pre></td></tr></table></div></figure>
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="http://19960218.xyz">GOTH</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="http://19960218.xyz/2020/09/18/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%AC%94%E8%AE%B0/">http://19960218.xyz/2020/09/18/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%AC%94%E8%AE%B0/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="http://19960218.xyz/tags/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/">数字图像处理</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="http://19960218.xyz/tags/%E5%8A%A9%E6%95%99%E8%AF%BE%E7%A8%8B/">助教课程</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="http://19960218.xyz/tags/MATLAB/">MATLAB</a></span></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2020/10/13/Python%E5%9F%BA%E7%A1%80/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">Python基础</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2020/03/23/%E7%94%A8-%E5%BC%82%E6%88%96%EF%BC%89%E8%BF%90%E7%AE%97%E7%AC%A6%E5%88%A4%E6%96%AD%E6%95%B0%E5%AD%97%E7%9A%84%E5%94%AF%E4%B8%80%E6%80%A7/"><span class="paginator-prev__text">用^(异或）运算符判断数字的唯一性</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#MATLAB%E5%85%A5%E9%97%A8"><span class="toc-number">1.</span> <span class="toc-text">
+          MATLAB入门</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80"><span class="toc-number">2.</span> <span class="toc-text">
+          图像处理基础</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%9B%BE%E5%83%8F%E5%8F%98%E6%8D%A2%E4%B8%8E%E7%A9%BA%E9%97%B4%E6%BB%A4%E6%B3%A2"><span class="toc-number">3.</span> <span class="toc-text">
+          三、图像变换与空间滤波</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E5%8F%98%E6%8D%A2"><span class="toc-number">3.1.</span> <span class="toc-text">
+          图像变换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E9%97%B4%E7%9A%84%E8%BF%90%E7%AE%97"><span class="toc-number">3.2.</span> <span class="toc-text">
+          图像间的运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E7%9A%84%E7%81%B0%E5%BA%A6%E8%BF%90%E7%AE%97"><span class="toc-number">3.3.</span> <span class="toc-text">
+          图像的灰度运算</span></a></li></ol></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/stun-logo.svg" alt="avatar"></div><p class="sidebar-ov-author__text">hello world</p></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">10</div><div class="sidebar-ov-state-item__name">归档</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2021</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>GOTH</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v5.4.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.6.2</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script></body></html>
