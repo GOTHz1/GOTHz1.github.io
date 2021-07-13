@@ -1,0 +1,258 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.6.2" type="image/png" sizes="32x32"><meta name="description" content="环境为：GNU&#x2F;Linux C++">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++学习之路">
+<meta property="og:url" content="http://19960218.xyz/2021/07/13/CPP%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/index.html">
+<meta property="og:site_name" content="GOTH">
+<meta property="og:description" content="环境为：GNU&#x2F;Linux C++">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/GOTHz1/blogimg/master/images20210713210121.png?token=AF2MERIZSORS75IMANIEUTTA5WHN4">
+<meta property="og:image" content="https://raw.githubusercontent.com/GOTHz1/blogimg/master/images20210713210914.png?token=AF2MERLJNCS72IUJTVDWEFDA5WILQ">
+<meta property="article:published_time" content="2021-07-12T23:50:11.000Z">
+<meta property="article:modified_time" content="2021-07-13T14:23:21.189Z">
+<meta property="article:author" content="GOTH">
+<meta property="article:tag" content="C++">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/GOTHz1/blogimg/master/images20210713210121.png?token=AF2MERIZSORS75IMANIEUTTA5WHN4"><title>C++学习之路 | GOTH</title><link ref="canonical" href="http://19960218.xyz/2021/07/13/CPP%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":false},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">GOTH</div><div class="header-banner-info__subtitle"></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">C++学习之路</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-07-13</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-07-13</span></span></div></header><div class="post-body"><p>环境为：GNU/Linux C++</p>
+<span id="more"></span>
+
+
+        <h2 id="一、理论知识"   >
+          <a href="#一、理论知识" class="heading-link"><i class="fas fa-link"></i></a><a href="#一、理论知识" class="headerlink" title="一、理论知识"></a>一、理论知识</h2>
+      
+        <h3 id="gcc-编译步骤"   >
+          <a href="#gcc-编译步骤" class="heading-link"><i class="fas fa-link"></i></a><a href="#gcc-编译步骤" class="headerlink" title="gcc 编译步骤"></a>gcc 编译步骤</h3>
+      <p>hello.c</p>
+<ol>
+<li>预处理<code>g++ -E</code> ：展开宏，头文件，替换条件编译，删除注释，空行，空白</li>
+<li>编译<code>g++ -S</code>：检查语法规范</li>
+<li>汇编<code>g++ -c</code>：将汇编指令翻译成机器指令</li>
+<li>链接:数据段合并，地址回填</li>
+</ol>
+<blockquote>
+<p>直接<code>g++ -c</code><br>gcc命令参数<br><code>-I</code>: 指定头文件的目录<br><code>-g</code>: 编译带调试信息的可执行文件<br><code>-O</code>: 优化源代码(编译慢，文件小，运行效率高)<br><code>-l/-L</code>:指定库文件/指定库文件路径<br><code>-Wall</code>:打印警告信息<br><code>-w</code>:关闭警告信息<br><code>-std=c++11</code>:设置编译标准<br><code>-o</code>:指定输出文件名<br><code>-D</code>:定义宏  </p>
+</blockquote>
+
+        <h3 id="静态库-动态库-shared库"   >
+          <a href="#静态库-动态库-shared库" class="heading-link"><i class="fas fa-link"></i></a><a href="#静态库-动态库-shared库" class="headerlink" title="静态库/动态库(shared库)"></a>静态库/动态库(shared库)</h3>
+      <p><strong>静态库</strong>:可执行程序运行钱就已经加载到执行代码中。成为执行代码的一部分<br><strong>动态库</strong>: 在执行程序启动时加载到执行程序中，可以被多个程序共享使用（建议使用）<br>静态库制作及使用：  </p>
+<blockquote>
+<p><code>ar rcs libmyl ib.a file.o</code>:以<strong>lib</strong>开头 <strong>.o</strong>结尾</p>
+</blockquote>
+<ol>
+<li>将.cpp生成.o文件:<code>g++ -c xxx.cpp xxx1.o</code></li>
+<li>使用ar制作静态库:<code>ar rcs libxxx.a xxx1.o xxx2.o</code></li>
+<li>编译静态库到可执行文件中:<code>g++ new.cpp libxxx.a -o a.out</code></li>
+</ol>
+<p>动态库制作及使用：</p>
+<ol>
+<li>将.cpp生成.o文件(生成与位置无关的代码 -fPIC)：<code>g++ -c xxx.cpp -o xxx.o -fPIC</code></li>
+<li>使用<code>g++ -shared</code>制作动态库：<code>g++ -shared -o libxxx.so xxx1.o xxx2.o</code></li>
+<li>编译可执行程序时，指定所使用的动态库(去掉lib前缀:libmylib.so-&gt;-lmylib):<code>g++ test.c -o a.out -lmylib -L./lib</code></li>
+<li>运行a.out出错：需要指定动态链接库（通过设置环境变量<code>LD_LIBRARY_PATH=动态链接库地址</code>或者配置<code>/etc/ld.so.conf</code>文件）</li>
+</ol>
+<blockquote>
+<p>通过<code>ldd a.out</code>查看调用的动态链接库</p>
+</blockquote>
+
+        <h3 id="GDB调试工具"   >
+          <a href="#GDB调试工具" class="heading-link"><i class="fas fa-link"></i></a><a href="#GDB调试工具" class="headerlink" title="GDB调试工具"></a>GDB调试工具</h3>
+      <p>略</p>
+
+        <h3 id="Makefile及Cmake"   >
+          <a href="#Makefile及Cmake" class="heading-link"><i class="fas fa-link"></i></a><a href="#Makefile及Cmake" class="headerlink" title="Makefile及Cmake"></a>Makefile及Cmake</h3>
+      
+        <h4 id="CMake"   >
+          <a href="#CMake" class="heading-link"><i class="fas fa-link"></i></a><a href="#CMake" class="headerlink" title="CMake"></a>CMake</h4>
+      
+        <h5 id="基本语法特征"   >
+          <a href="#基本语法特征" class="heading-link"><i class="fas fa-link"></i></a><a href="#基本语法特征" class="headerlink" title="基本语法特征"></a>基本语法特征</h5>
+      <ul>
+<li><p><strong>基础语法格： 指令(参数1 参数2)</strong></p>
+<ul>
+<li>参数使用括弧</li>
+<li>参数之间使用空格活分号分开</li>
+</ul>
+</li>
+<li><p><strong>指令是大小写无关的，参数和变量是大小写相关的</strong></p>
+</li>
+</ul>
+<figure class="highlight cmake"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span>(HELLO hello.cpp)</span><br><span class="line"><span class="keyword">add_executable</span>(hello main.cpp hello.cpp)</span><br><span class="line"><span class="keyword">ADD_EXECUTABLE</span>(hello main.cpp <span class="variable">$&#123;HELLO&#125;</span>)</span><br></pre></td></tr></table></div></figure>
+
+<ul>
+<li>变量使用${}方式取值，但是在IF控制语句中是直接使用变量名  </li>
+</ul>
+
+        <h5 id="重要指令和常用变量"   >
+          <a href="#重要指令和常用变量" class="heading-link"><i class="fas fa-link"></i></a><a href="#重要指令和常用变量" class="headerlink" title="重要指令和常用变量"></a>重要指令和常用变量</h5>
+      <p><code>cmake_minmum_required</code>:指定CMake的最小版本要求</p>
+<figure class="highlight cmake"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># cmake_minmum_required(VERSION versionnumber [FATAL_ERROR])</span></span><br><span class="line"><span class="comment"># 指定最下版本要求为2.8.3</span></span><br><span class="line">cmake_minmum_required(VERSION <span class="number">2.8</span>.<span class="number">3</span>)</span><br></pre></td></tr></table></div></figure>
+
+<p><code>project</code>:定义工程名称，并可指定工程支持的语言</p>
+<figure class="highlight cmake"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># project(projectname [CXX][C][Java])</span></span><br><span class="line"><span class="comment"># 指定工程名为HELLOWORLD</span></span><br><span class="line"><span class="keyword">project</span>(HELLWORLD)</span><br></pre></td></tr></table></div></figure>
+
+<p><code>set</code>:显式的定义变量</p>
+<figure class="highlight cmake"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># set(VAR [VALUE][CACHE TYPE DOCSTRING[FORCE]])</span></span><br><span class="line"><span class="comment"># 定义SRC变量的值为main.cpp hello.cpp</span></span><br><span class="line"><span class="keyword">set</span>(SRC sauhello.cpp hello.cpp)</span><br></pre></td></tr></table></div></figure>
+
+<p><code>include_directories</code>:向工程添加特定的头文件搜索路径</p>
+<figure class="highlight cmake"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># include_directories([AFTER|BEFORE][SYSTEM]dir1 dir2...)</span></span><br><span class="line"><span class="comment"># 将/usr/include/myincludefolder 和 ./include添加到搜索路径</span></span><br><span class="line"><span class="keyword">include_directories</span>(/usr/<span class="keyword">include</span>/myincludefolder ./<span class="keyword">include</span>)</span><br></pre></td></tr></table></div></figure>
+
+<p><code>link_directories</code>:向工程添加特定的库文件搜索路径</p>
+<figure class="highlight cmake"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># link_directories(dir1 dir2...)</span></span><br><span class="line"><span class="comment"># 将/usr/lib/mylibfolder 和 ./lib添加到库文件搜索路径</span></span><br><span class="line"><span class="keyword">link_directories</span>(/usr/lib/mylibfolder ./lib)</span><br></pre></td></tr></table></div></figure>
+
+<p><code>add_library</code>:生成库文件</p>
+<figure class="highlight cmake"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># add_library(libname[SHARED|STATIC|MODULE][EXCLUDE_FROM_ALL] source1 source2...)</span></span><br><span class="line"><span class="comment"># 通过变量 SRC 生成libhello.so共享库</span></span><br><span class="line"><span class="keyword">add_library</span>(hello SHARED <span class="variable">$&#123;SRC&#125;</span>)</span><br></pre></td></tr></table></div></figure>
+
+<p><code>add_compile_options</code>:添加编译参数</p>
+<figure class="highlight cmake"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># add_compile_options(&lt;option&gt;)</span></span><br><span class="line"><span class="comment"># 添加编译参数 -Wall -std=c++11 -o2</span></span><br><span class="line"><span class="keyword">add_compile_options</span>(-Wall -std=c++<span class="number">11</span> -o2)</span><br></pre></td></tr></table></div></figure>
+
+<p><code>add_execuable</code>:生成可执行文件</p>
+<figure class="highlight cmake"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># add_execuable(exename source1 source2 ...)</span></span><br><span class="line"><span class="comment"># 编译main.cpp生成可执行文件main</span></span><br><span class="line">add_execuable(main main.cpp)</span><br></pre></td></tr></table></div></figure>
+
+<p><code>taget_link_libraries</code>:为target添加需要链接的共享库</p>
+<figure class="highlight cmake"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># taget_link_libraries(target library1&lt;debug|optimized&gt; library2 ...)</span></span><br><span class="line"><span class="comment"># 将hello动态库文件连接到可执行文件main中</span></span><br><span class="line">taget_link_libraries(main hello)</span><br></pre></td></tr></table></div></figure>
+
+<p><code>add_subdirectory</code>:向当前工程中添加存放源文件的子目录,并可以指定中间二进制和目标二进制存放的位置</p>
+<figure class="highlight cmake"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># add_subdirectory(source_dir [binary_dir][EXCLUDE_FROM_ALL])</span></span><br><span class="line"><span class="comment"># 添加src子目录，sor中需有一个CMakelsits.txt</span></span><br><span class="line"><span class="keyword">add_subdirectory</span>(src)</span><br></pre></td></tr></table></div></figure>
+
+<p><code>add_source_directory</code>:发现一个目录下所有的源代码文件并将列表存储在一个变量中，这个指令临时被用来自动构建源文件列表</p>
+<figure class="highlight cmake"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># add_source_directory(dir VARIABLE)</span></span><br><span class="line"><span class="comment"># 定义SRC变量，其值为当前目录下的有所源代码文件</span></span><br><span class="line">add_source_directory(. SRC)</span><br><span class="line"><span class="comment"># 编译SRC变量所代表的源代码文件，生成main可执行文件</span></span><br><span class="line"><span class="keyword">add_executable</span>(main <span class="variable">$&#123;SRC&#125;</span>)</span><br></pre></td></tr></table></div></figure>
+
+<p>常用变量：</p>
+<p><code>CMAKE_C_FLAGS</code>: gcc编译选项<br><code>CMAKE_CXX_FLAGS</code>: g++编译选项</p>
+<figure class="highlight cmake"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在CMAKE_CXX_FLAGES编译选项后最佳-std=c++11</span></span><br><span class="line"><span class="keyword">set</span>(CMAKE_CXX_FLAGS <span class="string">&quot;$&#123;CAKE_CXX_FLAGS&#125; -std=c++11&quot;</span>)</span><br></pre></td></tr></table></div></figure>
+
+<p><code>CMAKE_BUILD_TYPE</code>: 编译类型(Debug,Release)  </p>
+<figure class="highlight cmake"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 设定编译类型为debug，调试时需要选择debug</span></span><br><span class="line"><span class="keyword">set</span>(CMAKE_BUILD_TYOE Debug)</span><br><span class="line"><span class="comment"># 设定编译类型为release，发布时需要选择release</span></span><br><span class="line"><span class="keyword">set</span>(CMAKE_BUILD_TYPE Release)</span><br></pre></td></tr></table></div></figure>
+
+<figure class="highlight cmake"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">CMAKE_SOURCE_DIR  </span><br><span class="line">PROJECT_SOURCE_DIR  </span><br><span class="line">&lt;projectname&gt;_SOURCE_DIR  </span><br></pre></td></tr></table></div></figure>
+
+<ol>
+<li>三个变量内容一致。都是工程顶层目录</li>
+<li>zaiin source build时，跟CMAKE_BINARY_DIR等变量一直</li>
+<li>PROJECT——SOURCE——DIR 略有不同。可这样理解</li>
+</ol>
+<p><code>CMAKE_C_COMPILER</code>:指定编译器<br><code>CMAKE_CXX_COMPILER</code>:指定C++编译器<br><code>EXECUTABLE_OUTPUT_PATH</code>:可执行文件输出的存放路径<br><code>LIBRARY_OUTPUT_PATH</code>:库文件输出的存放路径</p>
+
+        <h5 id="使用CMake编译工程"   >
+          <a href="#使用CMake编译工程" class="heading-link"><i class="fas fa-link"></i></a><a href="#使用CMake编译工程" class="headerlink" title="使用CMake编译工程"></a>使用CMake编译工程</h5>
+      <p>项目主目录存在一个CMakeKists.txt</p>
+<p>两种编译规则：</p>
+<ol>
+<li>包含源文件的子文件夹包含CmakeLsit.txt，主目录的CmakeLists.txt通过<code>add_subdirectory</code>添加子目录即可；</li>
+<li>包含源文件的子文件夹未包含CMakeLists.txt,子目录便以规则体现在主目录的CmakeLists.txt中</li>
+</ol>
+<p>流程：</p>
+<ol>
+<li>编写CmakeLists.txt。</li>
+<li>执行命令cmake PATH生成Makefile(PATH是顶层CmakeList.txt所在的目录)。</li>
+<li>执行命令make进行编译。</li>
+</ol>
+<p>构建方式：</p>
+<ol>
+<li>内部构建：与源文件同级</li>
+<li>外部构建：不同的目录(<strong>推荐</strong>)</li>
+</ol>
+<p>例：使用最简单的CMake编译HelloWorld</p>
+<p>hello.cpp:<br>略</p>
+<p>在.cpp同级目录创建CMakeLists.txt:</p>
+<figure class="highlight cmake"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cmake_minimum_required</span>(VERSION <span class="number">3.0</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">project</span>(HELLO)</span><br><span class="line"></span><br><span class="line"><span class="keyword">add_executable</span>(hello_cmake hello.cpp)</span><br></pre></td></tr></table></div></figure>
+
+<p>执行 :<code>cmake .</code>:<br>控制台信息</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">goth@goth-ubuntu:~/Project/CPPwork/testHello$ cmake .</span><br><span class="line">-- The C compiler identification is GNU 9.3.0</span><br><span class="line">-- The CXX compiler identification is GNU 9.3.0</span><br><span class="line">-- Check <span class="keyword">for</span> working C compiler: /usr/bin/cc</span><br><span class="line">-- Check <span class="keyword">for</span> working C compiler: /usr/bin/cc -- works</span><br><span class="line">-- Detecting C compiler ABI info</span><br><span class="line">-- Detecting C compiler ABI info - <span class="keyword">done</span></span><br><span class="line">-- Detecting C compile features</span><br><span class="line">-- Detecting C compile features - <span class="keyword">done</span></span><br><span class="line">-- Check <span class="keyword">for</span> working CXX compiler: /usr/bin/c++</span><br><span class="line">-- Check <span class="keyword">for</span> working CXX compiler: /usr/bin/c++ -- works</span><br><span class="line">-- Detecting CXX compiler ABI info</span><br><span class="line">-- Detecting CXX compiler ABI info - <span class="keyword">done</span></span><br><span class="line">-- Detecting CXX compile features</span><br><span class="line">-- Detecting CXX compile features - <span class="keyword">done</span></span><br><span class="line">-- Configuring <span class="keyword">done</span></span><br><span class="line">-- Generating <span class="keyword">done</span></span><br><span class="line">-- Build files have been written to: /home/goth/Project/CPPwork/testHello</span><br></pre></td></tr></table></div></figure>
+
+<p>执行<code>make</code>编译代码:</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">goth@goth-ubuntu:~/Project/CPPwork/testHello$ make</span><br><span class="line">Scanning dependencies of target hello_cmake</span><br><span class="line">[ 50%] Building CXX object CMakeFiles/hello_cmake.dir/hello.cpp.o</span><br><span class="line">[100%] Linking CXX executable hello_cmake</span><br><span class="line">[100%] Built target hello_cmake</span><br></pre></td></tr></table></div></figure>
+
+<p>结果：<br><img   src="https://raw.githubusercontent.com/GOTHz1/blogimg/master/images20210713210121.png?token=AF2MERIZSORS75IMANIEUTTA5WHN4" style=""  alt="运行结果"></p>
+<p>外部构建：<br>bash:  </p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mkdir build</span><br><span class="line"><span class="built_in">cd</span> build</span><br><span class="line"></span><br><span class="line">cmake ../</span><br></pre></td></tr></table></div></figure>
+
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">goth@goth-ubuntu:~/Project/CPPwork/testHello/build$ cmake ../</span><br><span class="line">-- The C compiler identification is GNU 9.3.0</span><br><span class="line">-- The CXX compiler identification is GNU 9.3.0</span><br><span class="line">-- Check <span class="keyword">for</span> working C compiler: /usr/bin/cc</span><br><span class="line">-- Check <span class="keyword">for</span> working C compiler: /usr/bin/cc -- works</span><br><span class="line">-- Detecting C compiler ABI info</span><br><span class="line">-- Detecting C compiler ABI info - <span class="keyword">done</span></span><br><span class="line">-- Detecting C compile features</span><br><span class="line">-- Detecting C compile features - <span class="keyword">done</span></span><br><span class="line">-- Check <span class="keyword">for</span> working CXX compiler: /usr/bin/c++</span><br><span class="line">-- Check <span class="keyword">for</span> working CXX compiler: /usr/bin/c++ -- works</span><br><span class="line">-- Detecting CXX compiler ABI info</span><br><span class="line">-- Detecting CXX compiler ABI info - <span class="keyword">done</span></span><br><span class="line">-- Detecting CXX compile features</span><br><span class="line">-- Detecting CXX compile features - <span class="keyword">done</span></span><br><span class="line">-- Configuring <span class="keyword">done</span></span><br><span class="line">-- Generating <span class="keyword">done</span></span><br><span class="line">-- Build files have been written to: /home/goth/Project/CPPwork/testHello/build</span><br></pre></td></tr></table></div></figure>
+
+<p>bash:<br><code>make</code>:  </p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Scanning dependencies of target hello_cmake</span><br><span class="line">[ 50%] Building CXX object CMakeFiles/hello_cmake.dir/hello.cpp.o</span><br><span class="line">[100%] Linking CXX executable hello_cmake</span><br><span class="line">[100%] Built target hello_cmake</span><br></pre></td></tr></table></div></figure>
+
+<p>生成文件目录：  </p>
+<p><img   src="https://raw.githubusercontent.com/GOTHz1/blogimg/master/images20210713210914.png?token=AF2MERLJNCS72IUJTVDWEFDA5WILQ" style=""  alt="20210713210914"></p>
+<p>编译略复杂项目：<br>结构如下：</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">goth@goth-ubuntu:~/Project/CPPwork/<span class="built_in">test</span>$ tree</span><br><span class="line">.</span><br><span class="line">├── include</span><br><span class="line">│   └── swap.h</span><br><span class="line">├── lib</span><br><span class="line">├── main.cpp</span><br><span class="line">└── src</span><br><span class="line">    └── swap.cpp</span><br><span class="line"></span><br><span class="line">3 directories, 3 files</span><br></pre></td></tr></table></div></figure>
+
+<p>结构如下：</p>
+
+        <h2 id="二、C-基础"   >
+          <a href="#二、C-基础" class="heading-link"><i class="fas fa-link"></i></a><a href="#二、C-基础" class="headerlink" title="二、C++基础"></a>二、C++基础</h2>
+      
+        <h2 id="三、C-标准库"   >
+          <a href="#三、C-标准库" class="heading-link"><i class="fas fa-link"></i></a><a href="#三、C-标准库" class="headerlink" title="三、C++标准库"></a>三、C++标准库</h2>
+      
+        <h2 id="四、问题总结"   >
+          <a href="#四、问题总结" class="heading-link"><i class="fas fa-link"></i></a><a href="#四、问题总结" class="headerlink" title="四、问题总结"></a>四、问题总结</h2>
+      
+        <h3 id="1-char-str-和char-str的区别"   >
+          <a href="#1-char-str-和char-str的区别" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-char-str-和char-str的区别" class="headerlink" title="1. char str[] 和char* str的区别"></a>1. char str[] 和char* str的区别</h3>
+      <p>参考：<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://blog.csdn.net/hackbuteer1/article/details/6706562" >char str[] 和 char *str 的区别</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+<figure class="highlight c++"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">char</span>* <span class="title">get_str</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> str[] = &#123;<span class="string">&quot;abcd&quot;</span>&#125;;</span><br><span class="line">    <span class="keyword">return</span> str;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p>char str[] = {“abcd”};定义了一个局部字符数组，尽管是数组，但它是一个局部变量，返回它的地址肯定是一个已经释放了的空间的地址。<br>此函数返回的是内部一个局部字符数组str的地址，且函数调用完毕后 此数组被销毁，所以你返回的指针也就指向一块被销毁的内存，这种写法是错误的。</p>
+<figure class="highlight c++"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">char</span>* <span class="title">get_str</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> *str = &#123;<span class="string">&quot;abcd&quot;</span>&#125;;</span><br><span class="line">    <span class="keyword">return</span> str;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p>char* str = {“abcd”};表示先定义个字符串常量，并将其地址赋给str。  </p>
+<p>此函数返回的是字符串常量的地址，而像这种字符串都是属于全局的，在编译的时候就已经分配了内存了，只有程序退出的时候才会被销毁，所以返回它的地址是没有问题的，但是你最好返回常量指针，因为你不能去改变字符串常量的值。<br><strong>这个str就在栈里面，但后面的字符串在常量区，函数返回的时候，先将常量区的地址返回，然后作用域结束，释放str在栈里面的空间。。</strong>  </p>
+<figure class="highlight c++"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">char</span> str[] = <span class="string">&quot;abcd&quot;</span>;<span class="comment">//abc存储在堆栈中</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">char</span> *str = <span class="string">&quot;abcd&quot;</span>;<span class="comment">//abc存储在静态存储区</span></span><br></pre></td></tr></table></div></figure>
+
+<p>准确的说，上面两个“abc”都是存储在静态存储区，即常量区。常量区是可读不可写的。所以任何试图对常量区进行写的操作都是非法的，当然了，这也不是一定不可写的，你可以采取某种渠道改变常量区的内存属性，比如改变pe相关节的属性就可以对常量区进行读写，当然了，这个目前可以忽略。。。  </p>
+<p>那么为什么str[] = “abc”;      可以写呢？   答案就在str[] = “abc”；会有一个额外的拷贝过程，即把常量区的 “abc”拷贝到栈内存去，所以就可以写了。</p>
+<p>总结：  </p>
+<ol>
+<li><p>所有以” “或’ ‘包含的字符、字符串都是常量，应该是存储在堆上。<br><code>char *str = &quot;xxxxx&quot;</code>，str指向该常量地址。<br><code>char str[] = &quot;xxxxx&quot;</code>，str在栈上申请空间。 将常量内容复制进来，所以是局部变量。</p>
+</li>
+<li><p>首先，数组和指针是不同的数据类型，有本质的区别：  </p>
+</li>
+</ol>
+<figure class="highlight cpp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> str[] = <span class="string">&quot;abcd&quot;</span>;         <span class="comment">//sizeof(str) == 5 * sizeof(char)</span></span><br><span class="line"><span class="keyword">char</span> * str = <span class="string">&quot;abcd&quot;</span>;        <span class="comment">//sizeof(str) == 4(x86) or 8(x64)</span></span><br></pre></td></tr></table></div></figure>
+
+<ol start="3">
+<li>数组可以自动转型成指针，指针不能转成数组。<br>字符串等价于字符数组，而不等于字符指针。根据上一条，字符串可以自动转型成字符指针。<br>再然后，”abcd”叫做“字符串常量”，任何类型的常量都是右值（没有名字的临时变量），必须让”abcd”成为左值（有名字的变量），才能够修改”abcd”这个字符串</li>
+</ol>
+<figure class="highlight cpp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> str[] = <span class="string">&quot;abcd&quot;</span>;              <span class="comment">//等号两端是相同的数据类型，右值成为左值</span></span><br><span class="line"><span class="keyword">char</span> * str = <span class="string">&quot;abcd&quot;</span>;             <span class="comment">//等号两端是不同的数据类型，右端自动转型成char*，该char*得到了str的名字，而&quot;abcd&quot;这个char数组仍然没有名字。</span></span><br></pre></td></tr></table></div></figure>
+
+<p>char * str是存储在全局静态存储区，所以，虽然是局部变量但函数返回后依然可以拿到正确的值！<br>char str[] 是存储在栈上的，local variable ，函数返回后，OS就收回空间了，就不复存在了，所以，拿不到正确的结果！<br> char str[]=”name”；与char str[5]；str=”name” 的不同之处在哪，能不能从内存分配的角度讲一讲，我知道数组名字是一个常量地址（指针），第一个为什么对，第二个为什么错？</p>
+<p>第二个先定义了一个数组，要知道数组名str是数组分配到的空间的首地址，str=”name”应该是等号两边类型不匹配的错误。一般的常量应该没有内存地址的，除非有某个变量指向了该常量。<br>数组名是地址常量，那么常量当然不允许被重新赋值。<br>“name”是一个字符串常量他存储在常量存储区，只能用一个指针指向它却不允许改变：char*p;p=”name”;<br>一般情况下char str[]=”name”；数组是在栈上的空间由编译器分配，内容可以由用户改变。</p>
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="http://19960218.xyz">GOTH</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="http://19960218.xyz/2021/07/13/CPP%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/">http://19960218.xyz/2021/07/13/CPP%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="http://19960218.xyz/tags/C/">C++</a></span></div><nav class="post-paginator paginator"><div class="paginator-next"><a class="paginator-next__link" href="/2021/07/03/java%E7%9F%A5%E8%AF%86%E7%82%B9/"><span class="paginator-prev__text">java知识点</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E7%90%86%E8%AE%BA%E7%9F%A5%E8%AF%86"><span class="toc-number">1.</span> <span class="toc-text">
+          一、理论知识</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#gcc-%E7%BC%96%E8%AF%91%E6%AD%A5%E9%AA%A4"><span class="toc-number">1.1.</span> <span class="toc-text">
+          gcc 编译步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%99%E6%80%81%E5%BA%93-%E5%8A%A8%E6%80%81%E5%BA%93-shared%E5%BA%93"><span class="toc-number">1.2.</span> <span class="toc-text">
+          静态库&#x2F;动态库(shared库)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GDB%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7"><span class="toc-number">1.3.</span> <span class="toc-text">
+          GDB调试工具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Makefile%E5%8F%8ACmake"><span class="toc-number">1.4.</span> <span class="toc-text">
+          Makefile及Cmake</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#CMake"><span class="toc-number">1.4.1.</span> <span class="toc-text">
+          CMake</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%E7%89%B9%E5%BE%81"><span class="toc-number">1.4.1.1.</span> <span class="toc-text">
+          基本语法特征</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%87%8D%E8%A6%81%E6%8C%87%E4%BB%A4%E5%92%8C%E5%B8%B8%E7%94%A8%E5%8F%98%E9%87%8F"><span class="toc-number">1.4.1.2.</span> <span class="toc-text">
+          重要指令和常用变量</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8CMake%E7%BC%96%E8%AF%91%E5%B7%A5%E7%A8%8B"><span class="toc-number">1.4.1.3.</span> <span class="toc-text">
+          使用CMake编译工程</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81C-%E5%9F%BA%E7%A1%80"><span class="toc-number">2.</span> <span class="toc-text">
+          二、C++基础</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81C-%E6%A0%87%E5%87%86%E5%BA%93"><span class="toc-number">3.</span> <span class="toc-text">
+          三、C++标准库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93"><span class="toc-number">4.</span> <span class="toc-text">
+          四、问题总结</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-char-str-%E5%92%8Cchar-str%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">4.1.</span> <span class="toc-text">
+          1. char str[] 和char* str的区别</span></a></li></ol></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/stun-logo.svg" alt="avatar"></div><p class="sidebar-ov-author__text">hello world</p></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">11</div><div class="sidebar-ov-state-item__name">归档</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2021</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>GOTH</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v5.4.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.6.2</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script></body></html>
