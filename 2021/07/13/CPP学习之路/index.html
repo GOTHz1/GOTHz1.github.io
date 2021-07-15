@@ -1,14 +1,14 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.6.2" type="image/png" sizes="32x32"><meta name="description" content="环境为：GNU&#x2F;Linux C++">
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.6.2" type="image/png" sizes="32x32"><meta name="description" content="疑问：   Java与C++传值的区别，值传递还是引用传递  匿名对象声明，左右问题  Release和Debug模式下编译器的优化问题   C++与Java传值区别">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C++学习之路">
 <meta property="og:url" content="http://19960218.xyz/2021/07/13/CPP%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/index.html">
 <meta property="og:site_name" content="GOTH">
-<meta property="og:description" content="环境为：GNU&#x2F;Linux C++">
+<meta property="og:description" content="疑问：   Java与C++传值的区别，值传递还是引用传递  匿名对象声明，左右问题  Release和Debug模式下编译器的优化问题   C++与Java传值区别">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/GOTHz1/blogimg/master/images20210713210121.png?token=AF2MERIZSORS75IMANIEUTTA5WHN4">
 <meta property="og:image" content="https://raw.githubusercontent.com/GOTHz1/blogimg/master/images20210713210914.png?token=AF2MERLJNCS72IUJTVDWEFDA5WILQ">
 <meta property="article:published_time" content="2021-07-12T23:50:11.000Z">
-<meta property="article:modified_time" content="2021-07-14T13:56:14.598Z">
+<meta property="article:modified_time" content="2021-07-15T14:02:03.316Z">
 <meta property="article:author" content="GOTH">
 <meta property="article:tag" content="C++">
 <meta name="twitter:card" content="summary">
@@ -36,7 +36,15 @@ var CONFIG = {
   sourcePath: {"js":"js","css":"css","images":"images"},
 };
 
-window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">GOTH</div><div class="header-banner-info__subtitle"></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">C++学习之路</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-07-13</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-07-14</span></span></div></header><div class="post-body"><p>环境为：GNU/Linux C++</p>
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">GOTH</div><div class="header-banner-info__subtitle"></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">C++学习之路</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-07-13</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-07-15</span></span></div></header><div class="post-body"><p>疑问：</p>
+<ul>
+<li><input disabled="" type="checkbox"> Java与C++传值的区别，值传递还是引用传递</li>
+<li><input disabled="" type="checkbox"> 匿名对象声明，左右问题</li>
+<li><input disabled="" type="checkbox"> Release和Debug模式下编译器的优化问题</li>
+</ul>
+<ol>
+<li>C++与Java传值区别</li>
+</ol>
 <span id="more"></span>
 
 
@@ -90,21 +98,13 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></he
       
         <h5 id="基本语法特征"   >
           <a href="#基本语法特征" class="heading-link"><i class="fas fa-link"></i></a><a href="#基本语法特征" class="headerlink" title="基本语法特征"></a>基本语法特征</h5>
-      <ul>
-<li><p><strong>基础语法格： 指令(参数1 参数2)</strong></p>
-<ul>
-<li>参数使用括弧</li>
-<li>参数之间使用空格活分号分开</li>
-</ul>
-</li>
-<li><p><strong>指令是大小写无关的，参数和变量是大小写相关的</strong></p>
-</li>
-</ul>
+      <p>基础语法格：指令(参数1 参数2)  </p>
+<p>参数使用括弧  </p>
+<p>参数之间使用空格活分号分开</p>
+<p>指令是大小写无关的，参数和变量是大小写相关的**</p>
 <figure class="highlight cmake"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span>(HELLO hello.cpp)</span><br><span class="line"><span class="keyword">add_executable</span>(hello main.cpp hello.cpp)</span><br><span class="line"><span class="keyword">ADD_EXECUTABLE</span>(hello main.cpp <span class="variable">$&#123;HELLO&#125;</span>)</span><br></pre></td></tr></table></div></figure>
 
-<ul>
-<li>变量使用${}方式取值，但是在IF控制语句中是直接使用变量名  </li>
-</ul>
+<p>变量使用<code>$&#123;&#125;</code>方式取值，但是在IF控制语句中是直接使用变量名  </p>
 
         <h5 id="重要指令和常用变量"   >
           <a href="#重要指令和常用变量" class="heading-link"><i class="fas fa-link"></i></a><a href="#重要指令和常用变量" class="headerlink" title="重要指令和常用变量"></a>重要指令和常用变量</h5>
@@ -384,7 +384,8 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></he
 
         <h3 id="类"   >
           <a href="#类" class="heading-link"><i class="fas fa-link"></i></a><a href="#类" class="headerlink" title="类"></a>类</h3>
-      
+      <p>系统会提供3个默认函数：<strong>默认构造</strong>、<strong>拷贝构造</strong>、<strong>析构函数</strong></p>
+
         <h4 id="设计抽象类"   >
           <a href="#设计抽象类" class="heading-link"><i class="fas fa-link"></i></a><a href="#设计抽象类" class="headerlink" title="设计抽象类"></a>设计抽象类</h4>
       <figure class="highlight c++"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> 类名&#123;</span></span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">    设置成员属性</span><br><span class="line">    设置成员函数</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
@@ -393,14 +394,115 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></he
 <p>类名 对象名；</p>
 <p>对象操作</p>
 
+        <h4 id="分文件编写"   >
+          <a href="#分文件编写" class="heading-link"><i class="fas fa-link"></i></a><a href="#分文件编写" class="headerlink" title="分文件编写"></a>分文件编写</h4>
+      <p><code>.h</code>写类成员函数的声明<br><code>.cpp</code>写成员函数的实现</p>
+<p>Point.h</p>
+<figure class="highlight c++"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> once</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Point</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">setXY</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">getX</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">getY</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="keyword">int</span> x;</span><br><span class="line">    <span class="keyword">int</span> y;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></div></figure>
+
+<p>Point.cpp</p>
+<figure class="highlight c++"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;Point.h&quot;</span></span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Point::setXY</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>-&gt;x = x;</span><br><span class="line">    <span class="keyword">this</span>-&gt;y = y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Point::getX</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Point::getY</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="初始化和清理"   >
+          <a href="#初始化和清理" class="heading-link"><i class="fas fa-link"></i></a><a href="#初始化和清理" class="headerlink" title="初始化和清理"></a>初始化和清理</h4>
+      <p>初始化：构造函数<br>清理：析构函数</p>
+<figure class="highlight c++"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//未提供构造函数</span></span><br><span class="line">Person p1;<span class="comment">//系统默认构造和析构，由系统提供</span></span><br></pre></td></tr></table></div></figure>
+
+<p>创建Person类，并提供构造函数</p>
+<p>分类：</p>
+<p>按照参数类型进行分类：<strong>无参构造函数</strong>、<strong>有参构造函数</strong><br>按照类型分类：<strong>普通构造函数</strong>、<strong>拷贝函数</strong></p>
+<figure class="highlight c++"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> once</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">//构造函数写法</span></span><br><span class="line">    <span class="comment">//与类名相同，没有类型，可重载</span></span><br><span class="line">    <span class="comment">//构造函数由编译器自动调用，而不是手动，而且只会调用一次</span></span><br><span class="line">    <span class="built_in">Person</span>();</span><br><span class="line">    <span class="built_in">Person</span>(<span class="keyword">int</span> id,<span class="keyword">int</span> age,string name,<span class="keyword">bool</span> gender);</span><br><span class="line">    <span class="comment">//拷贝构造函数</span></span><br><span class="line">    <span class="comment">//可以复制存在的Person类。必须加const关键字</span></span><br><span class="line">    <span class="comment">//</span></span><br><span class="line">    <span class="built_in">Person</span>(<span class="keyword">const</span> Person&amp; p);</span><br><span class="line">    <span class="comment">//析构函数写法</span></span><br><span class="line">    <span class="comment">//与类型相同类名。没有返回类型，无参（无法重载）</span></span><br><span class="line">    <span class="comment">//自动调用，函数结束时调用一次</span></span><br><span class="line">    ~<span class="built_in">Person</span>();</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="keyword">int</span> id;</span><br><span class="line">    <span class="keyword">int</span> age;</span><br><span class="line">    string name;</span><br><span class="line">    <span class="keyword">bool</span> gender;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></div></figure>
+
+<p>构造函数调用：</p>
+<figure class="highlight c++"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//括号法调用</span></span><br><span class="line"><span class="function">Person <span class="title">p1</span><span class="params">(<span class="number">1</span>,<span class="number">21</span>,<span class="string">&quot;小红&quot;</span>,<span class="number">0</span>)</span></span>;<span class="comment">//有参</span></span><br><span class="line"><span class="function">Person <span class="title">p2</span><span class="params">(p1)</span></span>;<span class="comment">//拷贝</span></span><br><span class="line">Person p3<span class="comment">//默认，切记不能加()</span></span><br><span class="line"><span class="comment">//Person p3();//函数声明，加了()就是默认构造函数的函数声明</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//显示法调用</span></span><br><span class="line"><span class="comment">//Person(2,22,&quot;小刚&quot;,1)，为匿名对象。并起名我p4l</span></span><br><span class="line">person p4 = <span class="built_in">Person</span>(<span class="number">2</span>,<span class="number">22</span>,<span class="string">&quot;小刚&quot;</span>,<span class="number">1</span>);</span><br><span class="line">person p5 = <span class="built_in">Person</span>(p4);</span><br><span class="line"></span><br><span class="line"><span class="comment">//匿名对象</span></span><br><span class="line"><span class="built_in">Person</span>(<span class="number">2</span>,<span class="number">22</span>,<span class="string">&quot;小刚&quot;</span>,<span class="number">1</span>);<span class="comment">//改行代码运行完直接调用析构函数</span></span><br><span class="line"><span class="comment">//Person(p5)//错误：无法使用拷贝构造函数初始化匿名对象</span></span><br><span class="line"><span class="comment">//编译器认为该句为 Person p5（声明），重定义异常</span></span><br><span class="line">Person p6 = <span class="built_in">person</span>(p5);<span class="comment">//写右值可以</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Person p7 = <span class="number">100</span>;<span class="comment">//相当于调用Person p7 = Person(100),隐式类型转换</span></span><br><span class="line">Person p8 = p7;<span class="comment">//相当于Person p8 =Person(p7);</span></span><br></pre></td></tr></table></div></figure>
+
+<p>拷贝函数调用的方式  </p>
+<p>1 用已经创建好的对象初始化新的对象</p>
+<figure class="highlight c++"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Person <span class="title">p1</span><span class="params">(<span class="number">1</span>)</span></span>;</span><br><span class="line"><span class="function">Person <span class="title">p2</span><span class="params">(p1)</span></span>;</span><br></pre></td></tr></table></div></figure>
+
+<p>2 以值传递的方式给函数参数传值</p>
+<figure class="highlight c++"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">doWork</span><span class="params">(Person p1)</span></span>&#123;<span class="comment">//Person p1 = Person(p);//使用了拷贝构造</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function">Person <span class="title">p</span><span class="params">(<span class="number">1</span>)</span></span>;</span><br><span class="line"><span class="built_in">doWork</span>(p);</span><br></pre></td></tr></table></div></figure>
+
+<p>3 以值方式返回局部对象</p>
+<figure class="highlight c++"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Person <span class="title">doWork</span><span class="params">()</span></span>&#123;</span><br><span class="line">    Person p1;</span><br><span class="line">    <span class="keyword">return</span> p1;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Person p =<span class="built_in">doWork</span>();</span><br></pre></td></tr></table></div></figure>
+
+<p>构造函数的调用规则</p>
+<ol>
+<li><p>当我们提供了<strong>有参</strong>构造函数，系统不会再提供默认构造函数，需要重写无参构造函数，<strong>仍然提供默认拷贝构造函数</strong></p>
+</li>
+<li><p>当我们提供了<strong>拷贝</strong>构造函数，系统不会再提供<strong>其他构造</strong>，<strong>析构函数依然提供</strong></p>
+</li>
+</ol>
+
+        <h4 id="深拷贝和浅拷贝"   >
+          <a href="#深拷贝和浅拷贝" class="heading-link"><i class="fas fa-link"></i></a><a href="#深拷贝和浅拷贝" class="headerlink" title="深拷贝和浅拷贝"></a>深拷贝和浅拷贝</h4>
+      <p>浅拷贝（系统默认拷贝）：拷贝值  </p>
+<blockquote>
+<p>如果属性里有指向堆区空间的数据，那么简单的浅拷贝会导致重复释放内存的异常  </p>
+</blockquote>
+<p>深拷贝：拷贝数据</p>
+
+        <h4 id="初始化列表的基本使用"   >
+          <a href="#初始化列表的基本使用" class="heading-link"><i class="fas fa-link"></i></a><a href="#初始化列表的基本使用" class="headerlink" title="初始化列表的基本使用"></a>初始化列表的基本使用</h4>
+      <figure class="highlight c++"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Person</span>(<span class="keyword">int</span> a,<span class="keyword">int</span> b,<span class="keyword">int</span> c):<span class="built_in">A</span>(a),<span class="built_in">C</span>(c)&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p>等同于：</p>
+<figure class="highlight c++"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Person</span>(<span class="keyword">int</span> a,<span class="keyword">int</span> b,<span class="keyword">int</span> c)&#123;</span><br><span class="line">    A=a;</span><br><span class="line">    C=c;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p>默认参数初始列表</p>
+<figure class="highlight c++"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Person</span>():<span class="built_in">A</span>(<span class="number">10</span>),<span class="built_in">B</span>(<span class="number">20</span>),<span class="built_in">C</span>(<span class="number">30</span>)&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="类作为类成员的案例"   >
+          <a href="#类作为类成员的案例" class="heading-link"><i class="fas fa-link"></i></a><a href="#类作为类成员的案例" class="headerlink" title="类作为类成员的案例"></a>类作为类成员的案例</h4>
+      <p>visualstudio:”类对象作为类成员”</p>
+<blockquote>
+<p>类对象作为类成员时，构造顺序先将类对象–构造。然后构造自己，析构顺序相反</p>
+</blockquote>
+
+        <h4 id="explicit关键字"   >
+          <a href="#explicit关键字" class="heading-link"><i class="fas fa-link"></i></a><a href="#explicit关键字" class="headerlink" title="explicit关键字"></a>explicit关键字</h4>
+      <blockquote>
+<p>防止隐式类型转换</p>
+</blockquote>
+
+        <h4 id="new运算符-动态对象创建"   >
+          <a href="#new运算符-动态对象创建" class="heading-link"><i class="fas fa-link"></i></a><a href="#new运算符-动态对象创建" class="headerlink" title="new运算符 动态对象创建"></a>new运算符 动态对象创建</h4>
+      <p><code>malloc</code>函数的问题：</p>
+<ol>
+<li>程序员必须确定对象的长度。</li>
+<li>malloc返回的void<em>指针.C++不允许将void</em>赋值给其他任何指针，必须强转。</li>
+<li>malloc可能申请失败，所以必须判断返回值来确保内存分配成功</li>
+<li>用户使用对象之前必须记住对他初始化，构造函数不能显示调用初始化（构造函数由编译器调用），用户可能忘记调用初始化函数。</li>
+</ol>
+<p>new使用：</p>
+<figure class="highlight c++"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Animal a1;<span class="comment">//栈区开辟空间</span></span><br><span class="line">Animal *a2 = <span class="keyword">new</span> Animal;<span class="comment">//堆区开辟空间</span></span><br><span class="line"><span class="keyword">delete</span> a2；</span><br></pre></td></tr></table></div></figure>
+
+<blockquote>
+<p>所有new出来的对象，都会返回该类型的指针。malloc返回void*还要强转<br>new 会调用构造函数，malloc不会<br>delete释放堆区空间</p>
+</blockquote>
+<p>void *接受指针导致无法delete</p>
+<figure class="highlight c++"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> *a = <span class="keyword">new</span> Animal;<span class="comment">//无法</span></span><br><span class="line"><span class="keyword">delete</span> a;<span class="comment">//不能调用析构函数</span></span><br></pre></td></tr></table></div></figure>
+
+<p>通过new开辟数组，一定会调用默认构造函数所以<strong>一定要提供默认构造</strong></p>
+<figure class="highlight c++"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Animal *aArray = <span class="keyword">new</span> Person[<span class="number">10</span>];<span class="comment">//构造函数调用10次</span></span><br><span class="line"></span><br><span class="line">Animal pArray[<span class="number">2</span>] = &#123;<span class="built_in">Person</span>(<span class="number">1</span>),<span class="built_in">Person</span>(<span class="number">2</span>)&#125;;<span class="comment">//栈上开辟数组，可以指定有参构造 </span></span><br><span class="line"></span><br><span class="line"><span class="keyword">delete</span> [] aArray;<span class="comment">//释放数组一定要加中括号,否则只会释放数组中的一个</span></span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="封装"   >
+          <a href="#封装" class="heading-link"><i class="fas fa-link"></i></a><a href="#封装" class="headerlink" title="封装"></a>封装</h3>
+      <p>C语言属性和行为分开处理啦，类型检测不够<br>C++中封装严格类型转换检测，让属性和行为绑定在一起。<br>C++ 有权限控制</p>
+<p><code>struct</code> 和<code>class</code> 一个意思，唯一的不同是默认权限不同。<br><code>struct</code>:默认权限<strong>public</strong><br><code>class</code>:默认权限<strong>private</strong></p>
+<p>C++中的权限：</p>
+<p><code>private</code><br><code>protected</code><br><code>public</code></p>
+<p>与java一样建议将内部属性设置为<strong>私有</strong>，提供get,set方法访问。</p>
+
         <h3 id="函数"   >
           <a href="#函数" class="heading-link"><i class="fas fa-link"></i></a><a href="#函数" class="headerlink" title="函数"></a>函数</h3>
       
         <h4 id="内联函数（inline-function）"   >
           <a href="#内联函数（inline-function）" class="heading-link"><i class="fas fa-link"></i></a><a href="#内联函数（inline-function）" class="headerlink" title="内联函数（inline function）"></a>内联函数（inline function）</h4>
-      <ul>
-<li>用来代替C语言的宏函数</li>
-</ul>
+      <p>作用：<strong>用来代替C语言的宏函数</strong>  </p>
 <p>宏函数：</p>
 <p> <code>#define MyAdd(x,y)((x)+(y))</code>:问题多，没有作用域</p>
 <p> 使用：</p>
@@ -477,13 +579,45 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></he
 <figure class="highlight c"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> once</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> __cplusplus<span class="comment">//两个下划线</span></span></span><br><span class="line">extren <span class="string">&quot;C&quot;</span>&#123;</span><br><span class="line">    <span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">show</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> __cplusplus</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></div></figure>
 
 
-        <h3 id="封装"   >
-          <a href="#封装" class="heading-link"><i class="fas fa-link"></i></a><a href="#封装" class="headerlink" title="封装"></a>封装</h3>
-      <p>C语言属性和行为分开处理啦，类型检测不够<br>C++中封装严格类型转换检测，让属性和行为绑定在一起。<br>C++ 有权限控制</p>
-<p><code>struct</code> 和<code>class</code> 一个意思，唯一的不同是默认权限不同。<br><code>struct</code>:默认权限<strong>public</strong><br><code>class</code>:默认权限<strong>private</strong></p>
-<p>C++中的权限：</p>
-<p><code>private</code><br><code>protected</code><br><code>public</code></p>
-<p>与java一样建议将内部属性设置为<strong>私有</strong>，提供get,set方法访问。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         <h2 id="三、C-标准库"   >
           <a href="#三、C-标准库" class="heading-link"><i class="fas fa-link"></i></a><a href="#三、C-标准库" class="headerlink" title="三、C++标准库"></a>三、C++标准库</h2>
@@ -552,14 +686,21 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></he
           指针的引用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E9%87%8F%E5%BC%95%E7%94%A8"><span class="toc-number">2.4.5.</span> <span class="toc-text">
           常量引用</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B1%BB"><span class="toc-number">2.5.</span> <span class="toc-text">
           类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%BE%E8%AE%A1%E6%8A%BD%E8%B1%A1%E7%B1%BB"><span class="toc-number">2.5.1.</span> <span class="toc-text">
-          设计抽象类</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0"><span class="toc-number">2.6.</span> <span class="toc-text">
-          函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%85%E8%81%94%E5%87%BD%E6%95%B0%EF%BC%88inline-function%EF%BC%89"><span class="toc-number">2.6.1.</span> <span class="toc-text">
-          内联函数（inline function）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E7%9A%84%E9%BB%98%E8%AE%A4%E5%8F%82%E6%95%B0"><span class="toc-number">2.6.2.</span> <span class="toc-text">
-          函数的默认参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E7%9A%84%E5%8D%A0%E4%BD%8D%E5%8F%82%E6%95%B0"><span class="toc-number">2.6.3.</span> <span class="toc-text">
-          函数的占位参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E9%87%8D%E8%BD%BD"><span class="toc-number">2.6.4.</span> <span class="toc-text">
-          函数重载</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#extern-%E2%80%9CC%E2%80%9D%E6%B5%85%E6%9E%90"><span class="toc-number">2.6.5.</span> <span class="toc-text">
-          extern “C”浅析</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%81%E8%A3%85"><span class="toc-number">2.7.</span> <span class="toc-text">
-          封装</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81C-%E6%A0%87%E5%87%86%E5%BA%93"><span class="toc-number">3.</span> <span class="toc-text">
+          设计抽象类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%86%E6%96%87%E4%BB%B6%E7%BC%96%E5%86%99"><span class="toc-number">2.5.2.</span> <span class="toc-text">
+          分文件编写</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96%E5%92%8C%E6%B8%85%E7%90%86"><span class="toc-number">2.5.3.</span> <span class="toc-text">
+          初始化和清理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B7%B1%E6%8B%B7%E8%B4%9D%E5%92%8C%E6%B5%85%E6%8B%B7%E8%B4%9D"><span class="toc-number">2.5.4.</span> <span class="toc-text">
+          深拷贝和浅拷贝</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96%E5%88%97%E8%A1%A8%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8"><span class="toc-number">2.5.5.</span> <span class="toc-text">
+          初始化列表的基本使用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B1%BB%E4%BD%9C%E4%B8%BA%E7%B1%BB%E6%88%90%E5%91%98%E7%9A%84%E6%A1%88%E4%BE%8B"><span class="toc-number">2.5.6.</span> <span class="toc-text">
+          类作为类成员的案例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#explicit%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-number">2.5.7.</span> <span class="toc-text">
+          explicit关键字</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#new%E8%BF%90%E7%AE%97%E7%AC%A6-%E5%8A%A8%E6%80%81%E5%AF%B9%E8%B1%A1%E5%88%9B%E5%BB%BA"><span class="toc-number">2.5.8.</span> <span class="toc-text">
+          new运算符 动态对象创建</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%81%E8%A3%85"><span class="toc-number">2.6.</span> <span class="toc-text">
+          封装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0"><span class="toc-number">2.7.</span> <span class="toc-text">
+          函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%85%E8%81%94%E5%87%BD%E6%95%B0%EF%BC%88inline-function%EF%BC%89"><span class="toc-number">2.7.1.</span> <span class="toc-text">
+          内联函数（inline function）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E7%9A%84%E9%BB%98%E8%AE%A4%E5%8F%82%E6%95%B0"><span class="toc-number">2.7.2.</span> <span class="toc-text">
+          函数的默认参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E7%9A%84%E5%8D%A0%E4%BD%8D%E5%8F%82%E6%95%B0"><span class="toc-number">2.7.3.</span> <span class="toc-text">
+          函数的占位参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E9%87%8D%E8%BD%BD"><span class="toc-number">2.7.4.</span> <span class="toc-text">
+          函数重载</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#extern-%E2%80%9CC%E2%80%9D%E6%B5%85%E6%9E%90"><span class="toc-number">2.7.5.</span> <span class="toc-text">
+          extern “C”浅析</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81C-%E6%A0%87%E5%87%86%E5%BA%93"><span class="toc-number">3.</span> <span class="toc-text">
           三、C++标准库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93"><span class="toc-number">4.</span> <span class="toc-text">
           四、问题总结</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-char-str-%E5%92%8Cchar-str%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">4.1.</span> <span class="toc-text">
           1. char str[] 和char* str的区别</span></a></li></ol></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/stun-logo.svg" alt="avatar"></div><p class="sidebar-ov-author__text">hello world</p></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">12</div><div class="sidebar-ov-state-item__name">归档</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2021</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>GOTH</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v5.4.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.6.2</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script></body></html>
