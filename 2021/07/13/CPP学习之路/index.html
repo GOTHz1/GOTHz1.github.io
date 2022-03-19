@@ -1,14 +1,14 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.6.2" type="image/png" sizes="32x32"><meta name="description" content="疑问：   Java与C++传值的区别，值传递还是引用传递  匿名对象声明，左右问题  Release和Debug模式下编译器的优化问题  深拷贝浅拷贝  #pragma pack(1)  拷贝函数MyArray *arrcopy1 &#x3D; new MyArray(*arr)与MyArray *arrcopy2(arr)区别。第二个是新指针指向原来数据。第一个是拷贝构造  C++关键字： operat">
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.6.2" type="image/png" sizes="32x32"><meta name="description" content="C++基础，纯手打">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C++学习之路">
 <meta property="og:url" content="http://19960218.xyz/2021/07/13/CPP%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/index.html">
 <meta property="og:site_name" content="GOTH">
-<meta property="og:description" content="疑问：   Java与C++传值的区别，值传递还是引用传递  匿名对象声明，左右问题  Release和Debug模式下编译器的优化问题  深拷贝浅拷贝  #pragma pack(1)  拷贝函数MyArray *arrcopy1 &#x3D; new MyArray(*arr)与MyArray *arrcopy2(arr)区别。第二个是新指针指向原来数据。第一个是拷贝构造  C++关键字： operat">
+<meta property="og:description" content="C++基础，纯手打">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/GOTHz1/blogimg/master/images20210713210121.png?token=AF2MERIZSORS75IMANIEUTTA5WHN4">
 <meta property="og:image" content="https://raw.githubusercontent.com/GOTHz1/blogimg/master/images20210713210914.png?token=AF2MERLJNCS72IUJTVDWEFDA5WILQ">
 <meta property="article:published_time" content="2021-07-12T23:50:11.000Z">
-<meta property="article:modified_time" content="2021-07-31T13:16:28.453Z">
+<meta property="article:modified_time" content="2022-03-19T05:27:39.273Z">
 <meta property="article:author" content="GOTH">
 <meta property="article:tag" content="C++">
 <meta name="twitter:card" content="summary">
@@ -36,19 +36,7 @@ var CONFIG = {
   sourcePath: {"js":"js","css":"css","images":"images"},
 };
 
-window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">GOTH</div><div class="header-banner-info__subtitle"></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">C++学习之路</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-07-13</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-07-31</span></span></div></header><div class="post-body"><p>疑问：</p>
-<ul>
-<li><input disabled="" type="checkbox"> Java与C++传值的区别，值传递还是引用传递</li>
-<li><input disabled="" type="checkbox"> 匿名对象声明，左右问题</li>
-<li><input disabled="" type="checkbox"> Release和Debug模式下编译器的优化问题</li>
-<li><input disabled="" type="checkbox"> 深拷贝浅拷贝</li>
-<li><input disabled="" type="checkbox"> #pragma pack(1)</li>
-<li><input disabled="" type="checkbox"> 拷贝函数MyArray *arrcopy1 = new MyArray(*arr)与MyArray *arrcopy2(arr)区别。第二个是新指针指向原来数据。第一个是拷贝构造</li>
-<li><input disabled="" type="checkbox"> C++关键字： <code>operator</code>,<code>friend</code>,<code>mutable</code>，<code>explicit</code></li>
-</ul>
-<ol>
-<li>C++与Java传值区别</li>
-</ol>
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">GOTH</div><div class="header-banner-info__subtitle"></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">C++学习之路</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-07-13</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-03-19</span></span></div></header><div class="post-body"><p>C++基础，纯手打</p>
 <span id="more"></span>
 
 
@@ -919,15 +907,40 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></he
       <p>使用：略</p>
 <p>编写自己的异常类，需要继承exception，重写析构和what方法</p>
 
-        <h2 id="三、C-标准库"   >
-          <a href="#三、C-标准库" class="heading-link"><i class="fas fa-link"></i></a><a href="#三、C-标准库" class="headerlink" title="三、C++标准库"></a>三、C++标准库</h2>
-      <p>广义：容器(contalner),算法(algorithm),迭代器(iterator)</p>
-<p>六大组件: 容器，算法，迭代器，仿函数，适配器，空间配置器</p>
-<p>容器通过空间配置器取得数据存储空间，算法通过迭代器存储容器的内容，仿函数协助算法完成策略。适配器可以修改仿函数</p>
+        <h2 id="三、C-标准库、模板库"   >
+          <a href="#三、C-标准库、模板库" class="heading-link"><i class="fas fa-link"></i></a><a href="#三、C-标准库、模板库" class="headerlink" title="三、C++标准库、模板库"></a>三、C++标准库、模板库</h2>
+      
+        <h3 id="STL六大部件"   >
+          <a href="#STL六大部件" class="heading-link"><i class="fas fa-link"></i></a><a href="#STL六大部件" class="headerlink" title="STL六大部件"></a>STL六大部件</h3>
+      
+        <h4 id="容器（Containers）"   >
+          <a href="#容器（Containers）" class="heading-link"><i class="fas fa-link"></i></a><a href="#容器（Containers）" class="headerlink" title="容器（Containers）"></a>容器（Containers）</h4>
+      <h5 id=""><a href="#" class="headerlink" title=""></a></h5><p><code>pair&lt;long,string&gt;(1,&quot;2&quot;);</code>  </p>
 
+        <h4 id="分配器（Allocators）"   >
+          <a href="#分配器（Allocators）" class="heading-link"><i class="fas fa-link"></i></a><a href="#分配器（Allocators）" class="headerlink" title="分配器（Allocators）"></a>分配器（Allocators）</h4>
+      
+        <h4 id="算法（Algorithms）"   >
+          <a href="#算法（Algorithms）" class="heading-link"><i class="fas fa-link"></i></a><a href="#算法（Algorithms）" class="headerlink" title="算法（Algorithms）"></a>算法（Algorithms）</h4>
+      
+        <h4 id="迭代器（Iterator）"   >
+          <a href="#迭代器（Iterator）" class="heading-link"><i class="fas fa-link"></i></a><a href="#迭代器（Iterator）" class="headerlink" title="迭代器（Iterator）"></a>迭代器（Iterator）</h4>
+      
+        <h4 id="适配器（Adapters）"   >
+          <a href="#适配器（Adapters）" class="heading-link"><i class="fas fa-link"></i></a><a href="#适配器（Adapters）" class="headerlink" title="适配器（Adapters）"></a>适配器（Adapters）</h4>
+      
+        <h4 id="仿函数（Functors）"   >
+          <a href="#仿函数（Functors）" class="heading-link"><i class="fas fa-link"></i></a><a href="#仿函数（Functors）" class="headerlink" title="仿函数（Functors）"></a>仿函数（Functors）</h4>
+      
         <h2 id="四、问题总结"   >
           <a href="#四、问题总结" class="heading-link"><i class="fas fa-link"></i></a><a href="#四、问题总结" class="headerlink" title="四、问题总结"></a>四、问题总结</h2>
       
+        <h3 id="拷贝赋值"   >
+          <a href="#拷贝赋值" class="heading-link"><i class="fas fa-link"></i></a><a href="#拷贝赋值" class="headerlink" title="拷贝赋值"></a>拷贝赋值</h3>
+      <blockquote>
+<p>检测自我赋值</p>
+</blockquote>
+
         <h3 id="1-char-str-和char-str的区别"   >
           <a href="#1-char-str-和char-str的区别" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-char-str-和char-str的区别" class="headerlink" title="1. char str[] 和char* str的区别"></a>1. char str[] 和char* str的区别</h3>
       <p>参考：<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://blog.csdn.net/hackbuteer1/article/details/6706562" >char str[] 和 char *str 的区别</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
@@ -1053,7 +1066,15 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></he
           异常的接口声明</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%82%E5%B8%B8%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-number">2.12.3.</span> <span class="toc-text">
           异常的生命周期</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%82%E5%B8%B8%E7%9A%84%E5%A4%9A%E6%80%81%E4%BD%BF%E7%94%A8"><span class="toc-number">2.12.4.</span> <span class="toc-text">
           异常的多态使用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%A0%87%E5%87%86%E5%BC%82%E5%B8%B8"><span class="toc-number">2.12.5.</span> <span class="toc-text">
-          使用系统的标准异常</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81C-%E6%A0%87%E5%87%86%E5%BA%93"><span class="toc-number">3.</span> <span class="toc-text">
-          三、C++标准库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93"><span class="toc-number">4.</span> <span class="toc-text">
-          四、问题总结</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-char-str-%E5%92%8Cchar-str%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">4.1.</span> <span class="toc-text">
-          1. char str[] 和char* str的区别</span></a></li></ol></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/stun-logo.svg" alt="avatar"></div><p class="sidebar-ov-author__text">hello world</p></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">13</div><div class="sidebar-ov-state-item__name">归档</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2021</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>GOTH</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v5.4.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.6.2</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script></body></html>
+          使用系统的标准异常</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81C-%E6%A0%87%E5%87%86%E5%BA%93%E3%80%81%E6%A8%A1%E6%9D%BF%E5%BA%93"><span class="toc-number">3.</span> <span class="toc-text">
+          三、C++标准库、模板库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#STL%E5%85%AD%E5%A4%A7%E9%83%A8%E4%BB%B6"><span class="toc-number">3.1.</span> <span class="toc-text">
+          STL六大部件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%B9%E5%99%A8%EF%BC%88Containers%EF%BC%89"><span class="toc-number">3.1.1.</span> <span class="toc-text">
+          容器（Containers）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-number">3.1.1.1.</span> <span class="toc-text"></span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%86%E9%85%8D%E5%99%A8%EF%BC%88Allocators%EF%BC%89"><span class="toc-number">3.1.2.</span> <span class="toc-text">
+          分配器（Allocators）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%EF%BC%88Algorithms%EF%BC%89"><span class="toc-number">3.1.3.</span> <span class="toc-text">
+          算法（Algorithms）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%AD%E4%BB%A3%E5%99%A8%EF%BC%88Iterator%EF%BC%89"><span class="toc-number">3.1.4.</span> <span class="toc-text">
+          迭代器（Iterator）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%82%E9%85%8D%E5%99%A8%EF%BC%88Adapters%EF%BC%89"><span class="toc-number">3.1.5.</span> <span class="toc-text">
+          适配器（Adapters）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%BF%E5%87%BD%E6%95%B0%EF%BC%88Functors%EF%BC%89"><span class="toc-number">3.1.6.</span> <span class="toc-text">
+          仿函数（Functors）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93"><span class="toc-number">4.</span> <span class="toc-text">
+          四、问题总结</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%B7%E8%B4%9D%E8%B5%8B%E5%80%BC"><span class="toc-number">4.1.</span> <span class="toc-text">
+          拷贝赋值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-char-str-%E5%92%8Cchar-str%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">4.2.</span> <span class="toc-text">
+          1. char str[] 和char* str的区别</span></a></li></ol></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/stun-logo.svg" alt="avatar"></div><p class="sidebar-ov-author__text">hello world</p></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">13</div><div class="sidebar-ov-state-item__name">归档</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2022</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>GOTH</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v5.4.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.6.2</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script></body></html>
